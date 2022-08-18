@@ -1,5 +1,5 @@
 <template>
-  <AppAccordion v-for="(faq, index) in faqs" :key="index" class="self-center pb-5 font-montserrat">
+  <AppAccordion v-for="(faq, index) in faqs" :key="index" class="pb-5 font-montserrat">
     <template v-slot:title>
       <span class="font-normal text-2xl text-center">{{faq.title}}</span>
     </template>

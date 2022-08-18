@@ -8,7 +8,7 @@
     >
       <slot name="title" />
       <svg
-          class="w-3 transition-all duration-800 transform"
+          class="w-3 transition-all duration-500 transform"
           :class="{
           'rotate-180': isOpen,
           'rotate-0': !isOpen,

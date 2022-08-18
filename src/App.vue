@@ -2,11 +2,11 @@
 LA CLASS DE FOOTER PAGE S'HA DE CANVIAR A CADA PÀGINA DEPENENT DE LES NECESSITATS
 class="absolute -bottom-80 pb-4 pl-2" CLASS DE FOOTER A MAINPAGE-->
 <template>
-  <div class="h-auto flex flex-col">
+  <div class="h-auto w-auto flex flex-col mt-5">
     <Header></Header>
     <!-- <MainPage class="my-24 h-screen"></MainPage> -->
     <LearningIcons></LearningIcons>
-    <FooterPage class="relative self-start -bottom-40 pb-4 pl-2"></FooterPage>
+    <FooterPage class="relative self-start -bottom-36 pl-2 scrollbar-hide"></FooterPage>
   </div>
 </template>
 

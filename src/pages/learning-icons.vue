@@ -5,7 +5,7 @@
       <p class="px-60 font-roboto self-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum in lorem nec euismod. Nunc porttitor porta imperdiet. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices. </p>
     </div>
   </section>
-  <section id="FAQS" class ="self-center flex flex-col w-3/4 pt-10">
+  <section id="FAQS" class ="self-center flex flex-col w-2/3 pt-10">
     <h2 class="font-montserrat text-4xl self-center pb-6 mb-9">FAQ'S</h2>
     <FAQS></FAQS>
   </section>
