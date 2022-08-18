@@ -1,26 +1,92 @@
+//VEURE PERQUE ROUTER NO FUNCIONA
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="h-auto flex flex-col">
+    <Header></Header>
+    <MainPage class="my-24 h-screen"></MainPage>
+    <FooterPage></FooterPage>
+    <!-- <button @click="changeImg" class="ba">Toggle Background Colour</button> -->
+  </div>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/Header";
+import MainPage from "@/pages/main";
+import FooterPage from "@/components/Footer";
 
 export default {
   name: 'App',
+  data(){
+    return{
+      pseudoanonimizados: {
+        display: ""
+      },
+      datos_no_personales: {
+        display: ""
+      },
+      transfer_externa: {
+        display: ""
+      },
+      tratamiento_datos: {
+        display: ""
+      },
+      datos_personales: {
+        display: ""
+      },
+      transfer_interna: {
+        display: ""
+      },
+      encriptados: {
+        display: ""
+      },
+      no_anonimizados: {
+        display: ""
+      },
+      metadata: {
+        display: ""
+      },
+      almacenamiento: {
+        display: ""
+      },
+      cache: {
+        display: ""
+      },
+      anonimizados: {
+        display: ""
+      },
+      prescriptivo: {
+        display: ""
+      },
+      predictivo: {
+        display: ""
+      },
+      diagnostico: {
+        display: ""
+      },
+      descriptivo: {
+        display: ""
+      },
+      cookies: {
+        display: ""
+      }
+    }
+  },
   components: {
-    HelloWorld
+    FooterPage,
+    MainPage,
+    Header
+  },
+  methods: {
+    changeImg: function () {
+      console.log("POJFPEADOJ")
+
+        this.pseudoanonimizados.display = "none";
+
+
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
