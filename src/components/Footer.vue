@@ -1,5 +1,5 @@
 <template>
-<section class="absolute -bottom-80 pb-4 pl-2">
+<section>
   <div class="flex flex-row justify-center">
     <svg-icon class="cursor-pointer" type="mdi" :path= "twitter" width=66 height=66 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>
     <svg-icon class="cursor-pointer" type="mdi" :path="facebook" width=66 height=66 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>

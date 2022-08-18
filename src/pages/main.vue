@@ -1,5 +1,5 @@
 <template>
-  <div v-on:click="changeImg" id="mainPage" class="absolute grid grid-rows-3">
+  <div id="mainPage" class="absolute grid grid-rows-3">
     <section id="links" class="grid grid-rows-2">
       <img :src="path" class="object-fill w-full h-full">
       <h1 class="self-end font-montserrat text-6xl px-6">{{ name }}</h1>
@@ -58,7 +58,7 @@ export default {
           this.name = "LEARNING ICONS"
           this.route = "/learning_icons"
         }
-      }, 5000)
+      }, 1000)
     },
     openInNewTab(url) {
       window.open(url);

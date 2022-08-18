@@ -1,18 +1,20 @@
-//VEURE PERQUE ROUTER NO FUNCIONA
+<!--VEURE PERQUE ROUTER NO FUNCIONA
+LA CLASS DE FOOTER PAGE S'HA DE CANVIAR A CADA PÀGINA DEPENENT DE LES NECESSITATS
+class="absolute -bottom-80 pb-4 pl-2" CLASS DE FOOTER A MAINPAGE-->
 <template>
   <div class="h-auto flex flex-col">
     <Header></Header>
-    <MainPage class="my-24 h-screen"></MainPage>
-    <FooterPage></FooterPage>
-    <!-- <button @click="changeImg" class="ba">Toggle Background Colour</button> -->
+    <!-- <MainPage class="my-24 h-screen"></MainPage> -->
+    <LearningIcons></LearningIcons>
+    <FooterPage class="relative self-start -bottom-40 pb-4 pl-2"></FooterPage>
   </div>
 </template>
 
 
 <script>
 import Header from "@/components/Header";
-import MainPage from "@/pages/main";
 import FooterPage from "@/components/Footer";
+import LearningIcons from "@/pages/learning-icons";
 
 export default {
   name: 'App',
@@ -72,8 +74,8 @@ export default {
     }
   },
   components: {
+    LearningIcons,
     FooterPage,
-    MainPage,
     Header
   },
   methods: {
