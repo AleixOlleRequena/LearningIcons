@@ -1,12 +1,16 @@
 <!--VEURE PERQUE ROUTER NO FUNCIONA
 LA CLASS DE FOOTER PAGE S'HA DE CANVIAR A CADA PÀGINA DEPENENT DE LES NECESSITATS
-class="absolute -bottom-80 pb-4 pl-2" CLASS DE FOOTER A MAINPAGE-->
+class="absolute -bottom-80 pb-4 pl-2" CLASS DE FOOTER A MAINPAGE
+class="relative self-start -bottom-36 pl-2 scrollbar-hide" CLASS DE FOOTER A LEARNING ICONS
+class="absolute self-start bottom-0 pl-2 scrollbar-hide" CLASS DE FOOTER A INFORM PAGE-->
+
 <template>
   <div class="h-auto w-auto flex flex-col mt-5">
     <Header></Header>
     <!-- <MainPage class="my-24 h-screen"></MainPage> -->
-    <LearningIcons></LearningIcons>
-    <FooterPage class="relative self-start -bottom-36 pl-2 scrollbar-hide"></FooterPage>
+    <!-- <LearningIcons></LearningIcons> -->
+    <InformPage></InformPage>
+    <FooterPage class="absolute self-start bottom-0 pl-2 scrollbar-hide"></FooterPage>
   </div>
 </template>
 
@@ -14,78 +18,14 @@ class="absolute -bottom-80 pb-4 pl-2" CLASS DE FOOTER A MAINPAGE-->
 <script>
 import Header from "@/components/Header";
 import FooterPage from "@/components/Footer";
-import LearningIcons from "@/pages/learning-icons";
+import InformPage from"@/pages/informPage";
 
 export default {
   name: 'App',
-  data(){
-    return{
-      pseudoanonimizados: {
-        display: ""
-      },
-      datos_no_personales: {
-        display: ""
-      },
-      transfer_externa: {
-        display: ""
-      },
-      tratamiento_datos: {
-        display: ""
-      },
-      datos_personales: {
-        display: ""
-      },
-      transfer_interna: {
-        display: ""
-      },
-      encriptados: {
-        display: ""
-      },
-      no_anonimizados: {
-        display: ""
-      },
-      metadata: {
-        display: ""
-      },
-      almacenamiento: {
-        display: ""
-      },
-      cache: {
-        display: ""
-      },
-      anonimizados: {
-        display: ""
-      },
-      prescriptivo: {
-        display: ""
-      },
-      predictivo: {
-        display: ""
-      },
-      diagnostico: {
-        display: ""
-      },
-      descriptivo: {
-        display: ""
-      },
-      cookies: {
-        display: ""
-      }
-    }
-  },
   components: {
-    LearningIcons,
+    InformPage,
     FooterPage,
     Header
-  },
-  methods: {
-    changeImg: function () {
-      console.log("POJFPEADOJ")
-
-        this.pseudoanonimizados.display = "none";
-
-
-    }
   }
 }
 </script>
