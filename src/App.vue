@@ -9,7 +9,8 @@ class="absolute self-start bottom-0 pl-2 scrollbar-hide" CLASS DE FOOTER A INFOR
     <Header></Header>
     <!-- <MainPage class="my-24 h-screen"></MainPage> -->
     <!-- <LearningIcons></LearningIcons> -->
-    <InformPage></InformPage>
+    <!-- <InformPage></InformPage> -->
+    <FeedbackPage></FeedbackPage>
     <FooterPage class="absolute self-start bottom-0 pl-2 scrollbar-hide"></FooterPage>
   </div>
 </template>
@@ -18,12 +19,12 @@ class="absolute self-start bottom-0 pl-2 scrollbar-hide" CLASS DE FOOTER A INFOR
 <script>
 import Header from "@/components/Header";
 import FooterPage from "@/components/Footer";
-import InformPage from "@/pages/InformPage";
+import FeedbackPage from "@/pages/Feedback";
 
 export default {
   name: 'App',
   components: {
-    InformPage,
+    FeedbackPage,
     FooterPage,
     Header
   }
