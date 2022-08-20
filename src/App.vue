@@ -18,7 +18,7 @@ class="absolute self-start bottom-0 pl-2 scrollbar-hide" CLASS DE FOOTER A INFOR
 <script>
 import Header from "@/components/Header";
 import FooterPage from "@/components/Footer";
-import InformPage from"@/pages/informPage";
+import InformPage from "@/pages/InformPage";
 
 export default {
   name: 'App',

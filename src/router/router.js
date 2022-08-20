@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LearningIcons from "../../src/pages/learning-icons.vue";
+import LearningIcons from "../pages/LearningIcons.vue";
 import App from "../App.vue";
 
 const routes = [
