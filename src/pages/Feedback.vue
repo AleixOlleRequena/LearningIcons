@@ -4,7 +4,6 @@
     <div id="feedbackSection" class="grid grid-cols-2 ">
       <section id="opinion" class="flex flex-col">
         <p class="font-roboto text-xl text-center pb-24">Give your opinion about the different icons we have created</p>
-        <vue-dropdown></vue-dropdown>
       </section>
       <section id="design" class="flex flex-col">
         <p class="font-roboto text-xl text-center pb-24">If you think you have a good design, send us your propose and we will analise it to keep improving</p>
@@ -15,12 +14,11 @@
 
 
 <script>
-import VueDropdown from 'vue-dynamic-dropdown'
 
 export default {
   name: "FeedbackPage",
   components: {
-    VueDropdown
+
   },
   data: function() {
     return {
