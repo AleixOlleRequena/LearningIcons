@@ -20,7 +20,6 @@ class="absolute self-start bottom-0 pl-2 scrollbar-hide" CLASS DE FOOTER A INFOR
 import Header from "@/components/Header";
 import FooterPage from "@/components/Footer";
 import FeedbackPage from "@/pages/Feedback";
-
 export default {
   name: 'App',
   components: {

@@ -3,46 +3,45 @@
     <h2 class="font-montserrat text-4xl self-center pb-8">HELP US TO KEEP IMPROVING</h2>
     <div id="feedbackSection" class=" grid grid-cols-2 ">
       <section id="opinion" class="flex flex-col">
-        <p class="font-roboto text-xl text-center pb-16">Give your opinion about the different icons we have created</p>
-
-        <!--FER COMPONENT QUE SIGUI EL DROPDOWN MENU-->
-        <button @click="isShow = !isShow" class="  flex flex-row justify-end mb-4 mx-28 shadow-md bg-white rounded-3xl font-montserrat h-8 text-xl hover:bg-slate-50 active:bg-slate-200">
-            {{icon}}
-            <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
-          </button>
-          <div v-if="isShow" id="dropdown" class=" select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
-            <div  id="list" v-for="(icon, index) in icons" :key="index" >
-              <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 " @click="isShow = !isShow" v-on:click="changeIcon(icon)">{{ icon.name }}</p>
-            </div>
-          </div>
-
-        <form v-if="path" ref="form" @submit.prevent="sendEmail" class="  flex flex-col">
-          <img :src="path" class="h-52 self-center mb-3">
-          <textarea v-model="message" type="text" id="message" name="message" class="resize-none mt-3 mx-28 h-32 rounded-3xl shadow-inner font-roboto"></textarea>
-          <input v-show="message" type="submit" value="Send" data-mdb-ripple="true"
-                 data-mdb-ripple-color="light" class=" mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">
-        </form>
-      </section>
-      <div id="line" class="absolute h-1/2 border border-solid left-1/2 border-black rounded"></div>
-      <section id="design" class="flex flex-col">
-        <p class="font-roboto text-xl text-center pb-16">If you think you have a good design, send us your propose and we will analise it to keep improving</p>
-
-        <!--FER COMPONENT QUE SIGUI EL DROPDOWN MENU-->
-        <button @click="isShow = !isShow" class="  flex flex-row justify-end mb-4 mx-28 shadow-md bg-white rounded-3xl font-montserrat h-8 text-xl hover:bg-slate-50 active:bg-slate-200">
-          {{icon}}
+         <p class="font-roboto text-xl text-center pb-16">Give your opinion about the different icons we have created</p>
+        <!--DropDown menu-->
+        <button @click="isShowOpinion = !isShowOpinion" class=" flex flex-row items-center justify-between mb-4 mx-28 shadow-md bg-white rounded-xl font-montserrat h-8  hover:bg-slate-50 active:bg-slate-200">
+          {{opinion_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
-        <div v-if="isShow"  class=" select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
-          <div  v-for="(icon, index) in icons" :key="index" >
-            <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 " @click="isShow = !isShow" v-on:click="changeIcon(icon)">{{ icon.name }}</p>
+        <div v-if="isShowOpinion" id="dropdown" class=" select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
+          <div id="list" v-for="(icon, index) in icons" :key="index" >
+            <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 " @click="isShowOpinion = !isShowOpinion" v-on:click="changeOpinionIcon(icon)">{{ icon.name }}</p>
           </div>
         </div>
 
-        <form ref="form" class="flex flex-col">
-          <DragDropArea></DragDropArea>
-          <input type="submit" value="Send" data-mdb-ripple="true"
-                 data-mdb-ripple-color="light" class="mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat  h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">
-        </form>
+        <!--image and opinion-->
+        <div v-if="path"  class="flex flex-col">
+          <img :src="path" class="h-52 self-center mb-3">
+          <div class="bg-white resize-none mt-3 mx-28 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
+            <textarea v-model="message" type="text" id="message" name="message" class="resize-none relative w-11/12 h-full font-roboto focus:outline-0"></textarea>
+          </div>
+          <button v-show="message" @click="sendOpinion" class=" mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
+        </div>
+      </section>
+
+      <div id="line" class="absolute h-1/2 border border-solid left-1/2 border-black rounded"></div>
+
+      <section id="design" class="flex flex-col">
+        <p class="font-roboto text-xl text-center pb-16">If you think you have a good design, send us your propose and we will analise it to keep improving</p>
+
+        <!--DropDown menu-->
+        <button @click="isShowDesign = !isShowDesign" class=" flex flex-row items-center justify-between mb-4 mx-28 shadow-md bg-white rounded-xl font-montserrat h-8  hover:bg-slate-50 active:bg-slate-200">
+          {{design_icon}}
+          <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
+        </button>
+        <div v-if="isShowDesign" id="dropdown2" class=" select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
+          <div  id="list2" v-for="(icon, index) in icons" :key="index" >
+            <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 " @click="isShowDesign = !isShowDesign" v-on:click="changeDesignIcon(icon)">{{ icon.name }}</p>
+          </div>
+        </div>
+
+        <DragDropArea v-bind:design_icon="design_icon" @removeIcon="removeIcon"></DragDropArea>
       </section>
     </div>
   </div>
@@ -50,26 +49,23 @@
 
 
 <script>
-import {
-  mdiChevronDown
-} from "@mdi/js";
-import SvgIcon from '@jamescoyle/vue-icon'
-import emailjs from 'emailjs-com';
 import DragDropArea from "@/components/DragDropArea";
+import firebase from "firebase/compat/app";
+import {mdiChevronDown} from "@mdi/js";
+import SvgIcon from "@jamescoyle/vue-icon";
 
 export default {
   name: "FeedbackPage",
   components:{
-    SvgIcon,
-    DragDropArea
+    DragDropArea,
+    SvgIcon
   },
   data() {
     return {
-      chevron: mdiChevronDown,
-      isShow: false,
       path :'',
       message: '',
-      icon:'',
+      opinion_icon:'Choose the icon you want to improve',
+      design_icon:'Choose the icon you want to improve',
       icons:[
         {
           name:"descriptive processing",
@@ -124,32 +120,46 @@ export default {
           name:"data processed during x time",
           path:"processed_x_time"
         },
-      ]
+      ],
+      chevron: mdiChevronDown,
+      isShowOpinion: false,
+      isShowDesign: false,
     }
   },
   methods: {
-    changeIcon(icon){
-      this.icon = icon.name;
+    changeOpinionIcon(icon){
+      this.opinion_icon = icon.name;
       this.path = "/assets/icons/" + icon.path + ".svg";
-      console.log(this.path);
     },
-    sendEmail() {
-      try {
-        const templateParams = {
-          icon: this.icon,
-          message: this.message
+    changeDesignIcon(icon){
+      this.design_icon = icon.name;
+    },
+    sendOpinion() {
+      let text="Do you want to send your opinion?"
+      if(confirm(text) === true){
+        const post = {
+          icon: this.opinion_icon,
+          message: this.message,
+          date: firebase.database.ServerValue.TIMESTAMP
         };
-
-        emailjs.send('service_a4gmiv4', 'template_edecbp1', templateParams,
-            'a4_ijyWw1e5xdKrY3')
-
-      } catch(error) {
-        console.log({error})
+        console.log(post.date)
+        firebase.database().ref('Opinions').push(post)
+            .then((response) => {
+              console.log(response)
+            })
+            .catch(err => {
+              console.log(err)
+            })
+        // Reset form field
+        this.message = ''
+        this.opinion_icon= 'Choose the icon you want to improve'
+        this.path= ''
       }
-      // Reset form field
-      this.message = ''
-      this.icon= ''
+
     },
+    removeIcon(){
+      this.design_icon = 'Choose the icon you want to improve'
+    }
   }
 }
 </script>
