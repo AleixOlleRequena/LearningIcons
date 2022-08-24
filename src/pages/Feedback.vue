@@ -1,5 +1,5 @@
 <template>
-  <div id="feedbackPage" class=" flex flex-col pt-10 mx-5">
+  <div id="feedbackPage" class="flex flex-col pt-10 mx-5 z-5">
     <h2 class="font-montserrat text-4xl self-center pb-8">HELP US TO KEEP IMPROVING</h2>
     <div id="feedbackSection" class=" grid grid-cols-2 ">
       <section id="opinion" class="flex flex-col">
@@ -9,35 +9,35 @@
           {{opinion_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
-        <div v-if="isShowOpinion" id="dropdown" class=" select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
-          <div id="list" v-for="(icon, index) in icons" :key="index" >
+        <div v-if="isShowOpinion" id="dropdown" class=" z-20 select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
+          <div id="list" v-for="(icon, index) in icons" :key="index" class="relative z-40">
             <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 " @click="isShowOpinion = !isShowOpinion" v-on:click="changeOpinionIcon(icon)">{{ icon.name }}</p>
           </div>
         </div>
 
         <!--image and opinion-->
-        <div v-if="path"  class="flex flex-col">
-          <img :src="path" class="h-52 self-center mb-3">
-          <div class="bg-white resize-none mt-3 mx-28 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
-            <textarea v-model="message" type="text" id="message" name="message" class="resize-none relative w-11/12 h-full font-roboto focus:outline-0"></textarea>
+        <div v-if="path"  class="absolute z-0 flex flex-col w-96 self-center mt-12 top-80">
+          <img :src="path" class=" h-52 self-center mb-3">
+          <div class="-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
+            <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative w-11/12 h-full font-roboto focus:outline-0"></textarea>
           </div>
-          <button v-show="message" @click="sendOpinion" class=" mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
+          <button v-show="message" @click="sendOpinion" class="-mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
         </div>
       </section>
 
       <div id="line" class="absolute h-1/2 border border-solid left-1/2 border-black rounded"></div>
 
       <section id="design" class="flex flex-col">
-        <p class="font-roboto text-xl text-center pb-16">If you think you have a good design, send us your propose and we will analise it to keep improving</p>
+        <p class="font-roboto text-xl text-center pb-16 mx-5">If you think you have a good design, send us your propose and we will analise it to keep improving</p>
 
         <!--DropDown menu-->
         <button @click="isShowDesign = !isShowDesign" class=" flex flex-row items-center justify-between mb-4 mx-28 shadow-md bg-white rounded-xl font-montserrat h-8  hover:bg-slate-50 active:bg-slate-200">
           {{design_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
-        <div v-if="isShowDesign" id="dropdown2" class=" select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
+        <div v-if="isShowDesign" id="dropdown2" class=" relative z-50 select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
           <div  id="list2" v-for="(icon, index) in icons" :key="index" >
-            <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 " @click="isShowDesign = !isShowDesign" v-on:click="changeDesignIcon(icon)">{{ icon.name }}</p>
+            <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 z-50" @click="isShowDesign = !isShowDesign" v-on:click="changeDesignIcon(icon)">{{ icon.name }}</p>
           </div>
         </div>
 
@@ -140,7 +140,7 @@ export default {
         const post = {
           icon: this.opinion_icon,
           message: this.message,
-          date: firebase.database.ServerValue.TIMESTAMP
+          date: new Date().toString()
         };
         console.log(post.date)
         firebase.database().ref('Opinions').push(post)

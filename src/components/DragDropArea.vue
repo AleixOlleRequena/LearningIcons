@@ -1,5 +1,5 @@
 <template>
-  <div id="dragDropArea" @dragover.prevent @drop.prevent @dragover="dragover" @dragleave="dragleave" @drop="dragFile" class="flex flex-col rounded-3xl border-2 border-black border-dashed mt-3 mx-28 h-52 justify-center items-center">
+  <div id="dragDropArea" @dragover.prevent @drop.prevent @dragover="dragover" @dragleave="dragleave" @drop="dragFile" class="absolute z-0 w-2/5 self-center mt-12 top-80 flex flex-col rounded-3xl border-2 border-black border-dashed h-52 justify-center items-center">
 
     <div id="dragDropMessage"  class="flex flex-col justify-center items-center" v-if="!imageData">
       <svg-icon class="justify-center"
@@ -17,7 +17,7 @@
     <div class="hidden" @click="this.$parent.$refs.upload.click()"></div>
   </div>
   <div class="flex flex-col mt-3 ">
-    <button v-show="imageData" @click="onUpload" class="mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
+    <button v-show="imageData" @click="onUpload" class="mx-28 mt-64 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
   </div>
 </template>
 
@@ -66,7 +66,7 @@ export default {
         const post = {
           photo: this.imageData[0].name,
           name: this.design_icon,
-          date: firebase.database.ServerValue.TIMESTAMP
+          date: new Date().toString()
         };
         this.picture = null;
         for (var i = 0; i < this.imageData.length; i++) {
