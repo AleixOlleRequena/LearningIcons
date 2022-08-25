@@ -5,7 +5,7 @@
         <rect class="cls-1" width="121" height="29"/>
         <rect class="cls-2" x="1" y="1" width="119" height="27" rx="3.64"/>
       </g>
-      <g :style="pseudoanonimizados">
+      <g id="datos_pseudoanonimizados" v-if="checkedNames.indexOf('pseudoanonymized') !== -1">
         <g id="Capa_2" data-name="Capa 2">
           <g id="Capa_1-2" data-name="Capa 1-2">
             <circle class="cls-3" cx="8.72" cy="7.94" r="6.06"/>
@@ -19,7 +19,7 @@
           </g>
         </g>
       </g>
-      <g id="datos_no_personales" :style="datos_no_personales" v-on:click="changeNoPersonales">
+      <g id="datos_no_personales" v-if="checkedNames.indexOf('general_data') !== -1">
         <g>
           <polygon class="cls-4" points="19.62 5.53 19.62 5.31 19.95 5.31 19.95 5.76 19.62 6.09 19.62 6.48 20 6.48 20 6.2 20.38 5.81 20.38 5.2 20.1 4.92 19.23 4.92 19.23 5.53 19.62 5.53"/>
           <rect class="cls-4" x="19.62" y="6.61" width="0.39" height="0.3"/>
@@ -34,7 +34,7 @@
           <ellipse class="cls-10" cx="21.88" cy="8" rx="5.88" ry="6"/>
         </g>
       </g>
-      <g id="transfer_externa" :style="transfer_externa">
+      <g id="transfer_externa" v-if="checkedNames.indexOf('third_party') !== -1">
         <g>
           <g id="Capa_3" data-name="Capa 3">
             <circle class="cls-3" cx="61" cy="8" r="6"/>
@@ -49,7 +49,7 @@
           </g>
         </g>
       </g>
-      <g id="tratamiento_datos" :style="tratamiento_datos">
+      <g id="tratamiento_datos" v-if="checkedNames.indexOf('processed_time') !== -1">
         <g>
           <circle class="cls-3" cx="48" cy="8" r="6"/>
           <circle class="cls-12" cx="48.9" cy="4.71" r="1.29"/>
@@ -75,7 +75,7 @@
           <path class="cls-13" d="M44.88,7.84l.82-.53a.11.11,0,0,0,0-.13h0l-.5-.57a.09.09,0,0,0-.12,0L44.46,7a.09.09,0,0,0,0,.11l.32.69a.09.09,0,0,0,.12,0Z" transform="translate(-0.22 -0.2)"/>
         </g>
       </g>
-      <g id="datos_personales" :style="datos_personales">
+      <g id="datos_personales" v-if="checkedNames.indexOf('personal_data') !== -1">
         <g>
           <path class="cls-15" d="M33.11,7.5h0a1.23,1.23,0,0,0-1.32,1.43h2.65A1.23,1.23,0,0,0,33.11,7.5" transform="translate(-0.22 -0.2)"/>
           <rect class="cls-8" x="30.77" y="4.58" width="8.43" height="4.99" rx="0.52"/>
@@ -89,7 +89,7 @@
           <ellipse class="cls-4" cx="32.9" cy="6.32" rx="0.69" ry="0.67"/>
         </g>
       </g>
-      <g id="transfer_interna" :style="transfer_interna">
+      <g id="transfer_interna" v-if="checkedNames.indexOf('intern_transfer') !== -1">
         <g>
           <ellipse class="cls-10" cx="74" cy="7.99" rx="6" ry="6.01"/>
           <ellipse class="cls-9" cx="71.7" cy="8.41" rx="0.63" ry="0.19"/>
@@ -116,7 +116,7 @@
           </g>
         </g>
       </g>
-      <g id="encriptados" :style="encriptados">
+      <g id="encriptados" v-if="checkedNames.indexOf('encrypted') !== -1">
         <g>
           <circle id="Rodona" class="cls-3" cx="8.88" cy="20.88" r="6.12"/>
           <text class="cls-19" transform="translate(4.73 19.93)">****</text>
@@ -129,7 +129,7 @@
           </g>
         </g>
       </g>
-      <g id="no_anonimizados" :style="no_anonimizados">
+      <g id="no_anonimizados" v-if="checkedNames.indexOf('no_anonymized') !== -1">
         <g>
           <ellipse class="cls-22" cx="74" cy="20.87" rx="6" ry="6.13"/>
           <ellipse class="cls-15" cx="73.99" cy="18.7" rx="1.94" ry="1.98"/>
@@ -138,7 +138,7 @@
           <ellipse class="cls-6" cx="74.95" cy="18.24" rx="0.42" ry="0.43"/>
         </g>
       </g>
-      <g id="metadata" :style="metadata">
+      <g id="metadata" v-if="checkedNames.indexOf('metadata') !== -1">
         <g>
           <path class="cls-4" d="M48.68,24.3V21.17a0,0,0,0,0,0-.05h-.71a0,0,0,0,0,0,.05h0V24.3a0,0,0,0,1,0,0h-1.1a0,0,0,0,0,0,.05l0,0,1.53,1.49a0,0,0,0,0,.06,0l1.53-1.49a0,0,0,0,0,0-.07H48.72a0,0,0,0,1,0,0Z" transform="translate(-0.22 -0.2)"/>
           <path class="cls-23" d="M51.72,18.77l-1.41-.89a.47.47,0,0,0-.4-.06L45,19.42a.57.57,0,0,0-.31.73l.75,2.46a.56.56,0,0,0,.66.41L51,21.41a.45.45,0,0,0,.29-.28L52,19.56A.64.64,0,0,0,51.72,18.77Z" transform="translate(-0.22 -0.2)"/>
@@ -148,7 +148,7 @@
           <ellipse class="cls-10" cx="48" cy="20.8" rx="6" ry="6.2"/>
         </g>
       </g>
-      <g id="almacenamiento" :style="almacenamiento">
+      <g id="almacenamiento" v-if="checkedNames.indexOf('stored_time') !== -1">
         <g>
           <ellipse class="cls-9" cx="34.99" cy="17.45" rx="2.95" ry="0.92"/>
           <polyline class="cls-9" points="32.04 17.45 32.04 21.91 32.04 22.18"/>
@@ -166,7 +166,7 @@
           <path class="cls-9" d="M32.26,20.68s-.26.64,2.27.81a10.16,10.16,0,0,0,1.83,0c.77-.08,1.65-.29,1.8-.77" transform="translate(-0.22 -0.2)"/>
         </g>
       </g>
-      <g id="cache" :style="cache">
+      <g id="cache" v-if="checkedNames.indexOf('local_cache') !== -1">
         <g>
           <path d="M88.18,4a1.18,1.18,0,0,0-.17.52,1.14,1.14,0,0,0,.25.18c.17.1.23.12.27.1a.1.1,0,0,0,0-.07s0-.07-.23-.19,0,0,.18,0a2.15,2.15,0,0,1,1.52.68,2,2,0,0,1,.72,1.18,1.12,1.12,0,0,1,0,.48,3,3,0,0,1-.06.33s0,.07.07.09.09,0,.1,0A2.59,2.59,0,0,0,91,6.59a1.74,1.74,0,0,0-.4-1.13,2.7,2.7,0,0,0-2.1-1.16h-.25l.06-.16c0-.15,0-.17,0-.19S88.23,3.92,88.18,4Z" transform="translate(-0.22 -0.2)"/>
           <path d="M82.87,6.52V8.2h4l.29-.07.3-.08V7.62c0-.5,0-.46-.26-.53l-.12,0,.18,0,.18,0v-.9L87.23,6c-.19,0-.2-.07,0-.1s.21,0,.21-.51V5l-.11,0a7.73,7.73,0,0,0-2.46-.12h-2Zm3.91-1.11v.5H83v-1h3.83ZM87.1,5l.2,0v.74l-.12,0L87,5.88h-.1a5.9,5.9,0,0,1,0-.94Zm-.32,1.52V7H83V6h3.83Zm.33-.42.21.05v.74l-.19.05c-.29.07-.27.11-.27-.42a2.91,2.91,0,0,1,0-.47Zm-.33,1.52v.49H83v-1h3.83Zm.31-.44.21.05V8L87.1,8l-.22.05a3.1,3.1,0,0,1,0-.48,4.29,4.29,0,0,1,0-.49Z" transform="translate(-0.22 -0.2)"/>
@@ -181,14 +181,14 @@
           <circle class="cls-22" cx="86.72" cy="7.94" r="6.06"/>
         </g>
       </g>
-      <g id="anonimizados" :style="anonimizados">
+      <g id="anonimizados" v-if="checkedNames.indexOf('anonymized') !== -1">
         <g>
           <ellipse class="cls-3" cx="87" cy="20.8" rx="6" ry="6.2"/>
           <path d="M87.19,21.55h0c-3.72,0-3.27,3.65-3.27,3.65h6.57S90.91,21.53,87.19,21.55Z" transform="translate(-0.22 -0.2)"/>
           <path d="M86.87,17.8h-1V16.48h1.82l.69.61v1.25l-.79.74v.55h-.89v-.8l.72-.7V17.3h-.6Zm-.15,3.1V20h1v.86Z" transform="translate(-0.22 -0.2)"/>
         </g>
       </g>
-      <g id="prescriptivo" :style="prescriptivo">
+      <g id="prescriptivo" v-if="checkedNames.indexOf('prescriptive_processing') !== -1">
         <g>
           <circle id="Rodona-2" data-name="Rodona" class="cls-3" cx="61" cy="21" r="6"/>
           <g id="Document">
@@ -212,7 +212,7 @@
           </g>
         </g>
       </g>
-      <g id="predictivo" :style="predictivo">
+      <g id="predictivo" v-if="checkedNames.indexOf('predictive_processing') !== -1">
         <g>
           <ellipse id="Rodona-3" data-name="Rodona" class="cls-3" cx="100" cy="20.89" rx="6" ry="6.11"/>
           <g id="Document-2" data-name="Document">
@@ -234,7 +234,7 @@
           </g>
         </g>
       </g>
-      <g id="diagnostico" :style="diagnostico">
+      <g id="diagnostico" v-if="checkedNames.indexOf('diagnostic_processing') !== -1">
         <g>
           <ellipse id="Rodona-4" data-name="Rodona" class="cls-3" cx="99.8" cy="8" rx="6.2" ry="6"/>
           <g id="Document-3" data-name="Document">
@@ -257,7 +257,7 @@
           <circle class="cls-35" cx="102.78" cy="11.48" r="0.05"/>
         </g>
       </g>
-      <g id="descriptivo" :style="descriptivo">
+      <g id="descriptivo" v-if="checkedNames.indexOf('descriptive_processing') !== -1">
         <g>
           <ellipse id="Rodona-5" data-name="Rodona" class="cls-3" cx="22" cy="20.89" rx="6" ry="6.11"/>
           <g id="Document-4" data-name="Document">
@@ -278,7 +278,7 @@
           </g>
         </g>
       </g>
-      <g id="cookies" :style="cookies">
+      <g id="cookies" v-if="checkedNames.indexOf('cookies') !== -1">
         <g id="Capa_2-2" data-name="Capa 2">
           <g id="Capa_1-2-2" data-name="Capa 1-2">
             <circle class="cls-22" cx="112" cy="15" r="6"/>
@@ -305,6 +305,7 @@
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "Iconimage",
+  props:['checkedNames'],
   data(){
     return{
       pseudoanonimizados: {

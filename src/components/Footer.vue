@@ -1,9 +1,9 @@
 <template>
 <section>
   <div class="flex flex-row justify-center">
-    <svg-icon class="cursor-pointer" type="mdi" :path= "twitter" width=66 height=66 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>
-    <svg-icon class="cursor-pointer" type="mdi" :path="facebook" width=66 height=66 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>
-    <svg-icon class="cursor-pointer" type="mdi" :path="blog" width=66 height=66 color="white" @click="openWeb('https://blogs.salleurl.edu/en/technology-learning')"></svg-icon>
+    <svg-icon class="cursor-pointer" type="mdi" :path= "twitter" width=55 height=55 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>
+    <svg-icon class="cursor-pointer" type="mdi" :path="facebook" width=55 height=55 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>
+    <svg-icon class="cursor-pointer" type="mdi" :path="blog" width=55 height=55 color="white" @click="openWeb('https://blogs.salleurl.edu/en/technology-learning')"></svg-icon>
   </div>
 </section>
 </template>
