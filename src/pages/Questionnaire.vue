@@ -193,8 +193,11 @@
     <!-- RIGHT PART WITH LICENSE IMAGE-->
     <div id="result_license" class="relative flex flex-col items-center mt-12 mx-2">
       <h1 class="font-montserrat text-4xl font-light mb-28">Your license:</h1>
-      <IconImage v-bind:checkedNames="checkedNames" class="w-full"></IconImage>
+      <IconImage ref="image" v-bind:checkedNames="checkedNames" class="w-full"></IconImage>
       <!-- <textarea type="text" value="!" class="mt-14 resize-none relative w-11/12 h-24 font-roboto rounded-xl"></textarea>-->
+      <a download=license :href= "this.link">
+        <button id="download">Download JSON!</button>
+      </a>
     </div>
 
     <!-- BOTTOM BUTTONS TO PASS PAGES-->
@@ -207,7 +210,7 @@
       </div>
       <div class="flex flex-row justify-center">
         <!-- CREATE LICENSE BUTTON-->
-        <button class="shadow-md bg-white rounded-xl font-montserrat w-48 h-10 text-xl hover:bg-slate-50 active:bg-slate-200">Create License</button>
+        <button v-on:click="getImageCode" class="shadow-md bg-white rounded-xl font-montserrat w-48 h-10 text-xl hover:bg-slate-50 active:bg-slate-200">Create License</button>
       </div>
     </div>
 
@@ -221,11 +224,13 @@
 import Header from "@/components/Header";
 import FooterPage from "@/components/Footer";
 import IconImage from "@/components/image";
+
 export default {
   name: "QuestionnairePage",
   components: {IconImage, FooterPage, Header},
   data() {
     return {
+      link:'',
       checkedNames: [],
       times_selected: {
       storage_time: '',
@@ -287,6 +292,18 @@ export default {
 
         this.groups[i].active = i === found;
       }
+    },
+    getImageCode(){
+
+      var svgBlob = new Blob([this.$refs.image.$el.innerHTML], {type:"image/svg+xml;charset=utf-8"});
+      var svgUrl = URL.createObjectURL(svgBlob);
+      svgUrl.replace(/ns0:/g,"")
+      this.link = svgUrl;
+
+      //convert svg source to URI data scheme.
+     // this.link = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(this.$refs.image.$el.innerHTML)
+
+      console.log(this.$refs.image.$el.innerHTML);
     }
   }
 }
