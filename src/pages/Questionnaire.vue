@@ -115,7 +115,7 @@
       <h1 class="font-montserrat text-4xl font-light">{{groups[4].name}}</h1>
       <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[4].description}}</h2>
       <!-- QUESTIONNAIRE PART-->
-      <div  class="relative w-full h-full grid grid-rows-3 mt-44" >
+      <div  class="relative w-full h-full grid grid-rows-3 mt-24" >
         <div class="flex flex-row justify-around">
           <div>
             <input type="checkbox" id="no_anonymized" value="no_anonymized" v-model="checkedNames" class="cursor-pointer w-4 h-4 bg-gray-100 rounded border-gray-300">
@@ -192,21 +192,26 @@
 
     <!-- RIGHT PART WITH LICENSE IMAGE-->
     <div id="result_license" class="relative flex flex-col items-center mt-12 mx-2">
-      <h1 class="font-montserrat text-4xl font-light mb-28">Your license:</h1>
-      <IconImage ref="image" v-bind:checkedNames="checkedNames" class="w-full"></IconImage>
-      <!-- <textarea type="text" value="!" class="mt-14 resize-none relative w-11/12 h-24 font-roboto rounded-xl"></textarea>-->
-      <a download=license :href= "this.link">
-        <button id="download">Download JSON!</button>
-      </a>
+      <h1 class="font-montserrat text-4xl font-light mb-20">Your license:</h1>
+      <IconImage v-on:click="openInNewTab('https://ls-leda.github.io/learning-icons/')" ref="image" v-bind:checkedNames="checkedNames" class="w-full cursor-pointer"></IconImage>
+
+      <div class="relative flex flex-col items-center mt-8" v-if="this.imageCode">
+        <p class="font-montserrat font-bold mb-2">Copy this code to inform your students!</p>
+        <textarea id="image_code" name="image_code" v-model="this.imageCode" class="overflow-auto w-full h-32 resize-none"></textarea>
+        <p class="font-montserrat font-bold my-2">or</p>
+        <a download="yourLicense" :href= "this.link">
+          <button id="download" class="shadow-md bg-white rounded-xl font-montserrat w-64 h-10 hover:bg-slate-200 active:bg-slate-200">Download your license</button>
+        </a>
+      </div>
     </div>
 
     <!-- BOTTOM BUTTONS TO PASS PAGES-->
     <div id="buttons" class="absolute grid grid-rows-2 items-center col-start-2 col-end-4 w-full -bottom-60 gap-y-8">
       <div class="flex flex-row justify-around ">
         <!-- PREVIOUS BUTTON-->
-        <button v-if="groups[0].active === false" v-on:click="previousPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-50 active:bg-slate-200">Previous</button>
+        <button v-if="groups[0].active === false" v-on:click="previousPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-200 active:bg-slate-200">Previous</button>
         <!-- NEXT BUTTON-->
-        <button v-if="groups[5].active === false" v-on:click="nextPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-50 active:bg-slate-200">Next</button>
+        <button v-if="groups[5].active === false" v-on:click="nextPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-200 active:bg-slate-200">Next</button>
       </div>
       <div class="flex flex-row justify-center">
         <!-- CREATE LICENSE BUTTON-->
@@ -231,6 +236,7 @@ export default {
   data() {
     return {
       link:'',
+      imageCode:'',
       checkedNames: [],
       times_selected: {
       storage_time: '',
@@ -294,16 +300,12 @@ export default {
       }
     },
     getImageCode(){
-
-      var svgBlob = new Blob([this.$refs.image.$el.innerHTML], {type:"image/svg+xml;charset=utf-8"});
-      var svgUrl = URL.createObjectURL(svgBlob);
-      svgUrl.replace(/ns0:/g,"")
-      this.link = svgUrl;
-
-      //convert svg source to URI data scheme.
-     // this.link = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(this.$refs.image.$el.innerHTML)
-
-      console.log(this.$refs.image.$el.innerHTML);
+      this.imageCode = this.$refs.image.$el.innerHTML;
+      let svgBlob = new Blob([this.$refs.image.$el.innerHTML], {type: "image/svg+xml;charset=utf-8"});
+      this.link = URL.createObjectURL(svgBlob);
+    },
+    openInNewTab(page){
+      window.open(page);
     }
   }
 }

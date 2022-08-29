@@ -225,7 +225,7 @@
             <line x1="96.92" y1="20.39" x2="100.65" y2="20.39" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.2px"/>
             <line x1="96.92" y1="19.42" x2="100.65" y2="19.42" style="fill: none;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.2px"/>
           </g>
-          <g id="Bola" v-if="checkedNames.indexOf('third_party') !== -1">
+          <g id="Bola">
             <path d="M102.14,22.37,100.29,25a4.27,4.27,0,0,0,1.85.37" transform="translate(-0.22 -0.2)" style="fill: #fff;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.2px"/>
             <path d="M102.14,22.37,104,25a3.56,3.56,0,0,1-1.86.37" transform="translate(-0.22 -0.2)" style="fill: #fff;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.2px"/>
             <ellipse cx="101.93" cy="22.37" rx="1.85" ry="1.88" style="fill: #fff;stroke: #000;stroke-miterlimit: 10;stroke-width: 0.2px"/>

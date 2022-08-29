@@ -19,7 +19,7 @@
         <div v-if="path"  class="absolute z-0 flex flex-col w-96 self-center mt-12 top-80">
           <img :src="path" class=" h-52 self-center mb-3">
           <div class="-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
-            <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative w-11/12 h-full font-roboto focus:outline-0"></textarea>
+            <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative w-11/12 h-full font-roboto focus:outline-0" placeholder="Write your opinion here"></textarea>
           </div>
           <button v-show="message" @click="sendOpinion" class="-mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
         </div>
