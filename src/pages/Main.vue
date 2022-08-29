@@ -1,9 +1,11 @@
 <template>
   <div id="mainPage" class="absolute grid grid-rows-3">
+    <router-link :to="route">
     <section id="links" class="grid grid-rows-2">
-      <img :src="path" class="object-fill w-full h-full">
+      <img :src="path" class="object-fill w-36">
       <h1 class="self-end font-montserrat text-6xl px-6">{{ name }}</h1>
     </section>
+    </router-link>
     <section id="explicacio" class ="flex flex-col pt-20">
       <h2 class="font-montserrat text-4xl self-center pb-6">WHAT IS LEARNING ICONS</h2>
       <div class="text-center">
@@ -29,6 +31,7 @@ export default {
     return {
       path : "/assets/IconsImage.svg",
       name : "LEARNING ICONS",
+      route:"/learningIcons",
       timer : null
     }
   },
@@ -56,9 +59,9 @@ export default {
         }else{
           this.path = "/assets/IconsImage.svg"
           this.name = "LEARNING ICONS"
-          this.route = "/learning_icons"
+          this.route = "/learningIcons"
         }
-      }, 1000)
+      }, 5000)
     },
     openInNewTab(url) {
       window.open(url);

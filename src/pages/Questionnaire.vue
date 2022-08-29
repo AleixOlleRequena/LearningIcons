@@ -1,5 +1,4 @@
 <template>
-  <Header></Header>
 <div id="questionnaire" class="relative grid grid-cols-4 h-full">
   <!-- LEFT MENU-->
   <div class="relative flex flex-col items-center inset-y-1/2" >
@@ -197,10 +196,10 @@
 
       <div class="relative flex flex-col items-center mt-8" v-if="this.imageCode">
         <p class="font-montserrat font-bold mb-2">Copy this code to inform your students!</p>
-        <textarea id="image_code" name="image_code" v-model="this.imageCode" class="overflow-auto w-full h-32 resize-none"></textarea>
+        <textarea id="image_code" name="image_code" v-model="this.imageCode" class="overflow-auto w-full h-32 resize-none focus:outline-blue-500" readonly></textarea>
         <p class="font-montserrat font-bold my-2">or</p>
         <a download="yourLicense" :href= "this.link">
-          <button id="download" class="shadow-md bg-white rounded-xl font-montserrat w-64 h-10 hover:bg-slate-200 active:bg-slate-200">Download your license</button>
+          <button id="download" class="shadow-md bg-white rounded-xl font-montserrat w-64 h-10 hover:bg-slate-200 ">Download your license</button>
         </a>
       </div>
     </div>
@@ -220,19 +219,15 @@
     </div>
 
 </div>
-  <FooterPage class="absolute self-start bottom-0 pl-2 scrollbar-hide"></FooterPage>
-
 </template>
 
 <script>
 
-import Header from "@/components/Header";
-import FooterPage from "@/components/Footer";
 import IconImage from "@/components/image";
 
 export default {
   name: "QuestionnairePage",
-  components: {IconImage, FooterPage, Header},
+  components: {IconImage},
   data() {
     return {
       link:'',
