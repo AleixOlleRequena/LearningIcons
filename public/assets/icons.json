@@ -95,7 +95,7 @@
                 },
                 {
                     "name": "Encrypted data",
-                    "description": "The stored data i sencrypted, that means that infomation is transformed into another form, or code, so that only people with access to a secret key or password can read it.",
+                    "description": "The stored data is encrypted, that means that infomation is transformed into another form, or code, so that only people with access to a secret key or password can read it.",
                     "url": "icons/encriptados.svg"
                 },
                 {

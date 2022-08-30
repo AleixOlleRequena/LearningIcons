@@ -326,11 +326,11 @@
   <!-- RIGHT PART WITH LICENSE IMAGE-->
   <div id="result_license" class="relative flex flex-col items-center mt-12 mx-2">
       <h1 class="font-montserrat text-4xl font-light mb-20">Your license:</h1>
-      <IconImage v-on:click="openInNewTab('https://ls-leda.github.io/learning-icons/')" ref="image" v-bind:checkedNames="checkedNames" class="w-36 cursor-pointer"></IconImage>
+      <IconImage v-on:click="openInNewTab('https://ls-leda.github.io/learning-icons/')" ref="image" v-bind:checkedNames="checkedNames" class="w-full cursor-pointer"></IconImage>
 
-      <div class="relative flex flex-col items-center mt-8" v-if="this.imageCode">
+      <div class="relative flex flex-col items-center mt-8 w-full px-2" v-if="this.imageCode">
         <p class="font-montserrat font-bold mb-2">Copy this code to inform your students!</p>
-        <textarea id="image_code" name="image_code" v-model="this.imageCode" class="overflow-auto w-full h-32 resize-none focus:outline-blue-500" readonly></textarea>
+        <textarea id="image_code" name="image_code" v-model="this.imageCode" class="overflow-auto w-full h-32 resize-none focus:outline-blue-500 px-2" readonly></textarea>
         <p class="font-montserrat font-bold my-2">or</p>
         <a download="yourLicense" :href= "this.link">
           <button id="download" class="shadow-md bg-white rounded-xl font-montserrat w-64 h-10 hover:bg-slate-200 ">Download your license</button>
