@@ -13,13 +13,20 @@
       <!-- GROUP NAME AND EXPLANATION-->
       <h1 class="font-montserrat text-4xl font-light">{{groups[0].name}}</h1>
       <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[0].description}}</h2>
-
+      <!-- <svg-icon type="mdi" :path= "information_icon" class="absolute top-10 right-10 cursor-pointer" width=24 height=24 v-on:click="showPopUp"></svg-icon>-->
       <!-- QUESTIONNAIRE PART-->
         <div class="relative w-full h-full grid grid-rows-2 mt-28" >
           <div class="flex flex-row justify-around">
             <div>
               <input type="checkbox" id="descriptive processing" value="descriptive_processing" v-model="checkedNames" class="cursor-pointer w-4 h-4 bg-gray-100 rounded border-gray-300">
-              <label for="descriptive processing" class="mx-2 font-roboto">descriptive processing</label>
+              <label for="descriptive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip()" v-on:mouseleave="toggleTooltip()" >descriptive processing</label>
+              <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow, 'block': tooltipShow}" class="bg-blue-600 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg">
+                <div>
+                  <div class="text-white p-3">
+                    Descriptive analysis helps describe, show or summarize data points in a constructive way such that patterns might emerge that fulfill every condition of the data.
+                  </div>
+                </div>
+              </div>
             </div>
             <div>
               <input type="checkbox" id="diagnostic processing" value="diagnostic_processing" v-model="checkedNames" class="cursor-pointer w-4 h-4 bg-gray-100 rounded border-gray-300">
@@ -217,19 +224,23 @@
         <button v-on:click="getImageCode" class="shadow-md bg-white rounded-xl font-montserrat w-48 h-10 text-xl hover:bg-slate-50 active:bg-slate-200">Create License</button>
       </div>
     </div>
-
 </div>
+
 </template>
 
 <script>
 
 import IconImage from "@/components/image";
+import { mdiHelpCircleOutline  } from "@mdi/js";
+import {createPopper} from "@popperjs/core";
 
 export default {
   name: "QuestionnairePage",
   components: {IconImage},
   data() {
     return {
+      tooltipShow: false,
+      information_icon: mdiHelpCircleOutline,
       link:'',
       imageCode:'',
       checkedNames: [],
@@ -301,6 +312,16 @@ export default {
     },
     openInNewTab(page){
       window.open(page);
+    },
+    toggleTooltip: function(){
+      if(this.tooltipShow){
+        this.tooltipShow = false;
+      } else {
+        this.tooltipShow = true;
+        createPopper(this.$refs.btnRef, this.$refs.tooltipRef, {
+          placement: "right"
+        });
+      }
     }
   }
 }

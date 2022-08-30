@@ -45,6 +45,8 @@
       </section>
     </div>
   </div>
+  <!-- POPUP THAT APPEARS WHEN USERS SEND OPINION OR DESIGN-->
+  <ThanksPopUp v-bind:popUp="popUp" v-if="showPopUp" @thanksPopUp= "alternate_thanks_pop_up" class="font-montserrat text-xl text-center"></ThanksPopUp>
 </template>
 
 
@@ -53,10 +55,12 @@ import DragDropArea from "@/components/DragDropArea";
 import firebase from "firebase/compat/app";
 import {mdiChevronDown} from "@mdi/js";
 import SvgIcon from "@jamescoyle/vue-icon";
+import ThanksPopUp from "@/components/ThanksPopUp";
 
 export default {
   name: "FeedbackPage",
   components:{
+    ThanksPopUp,
     DragDropArea,
     SvgIcon
   },
@@ -64,6 +68,8 @@ export default {
     return {
       path :'',
       message: '',
+      popUp:'',
+      showPopUp:false,
       opinion_icon:'Choose the icon you want to improve',
       design_icon:'Choose the icon you want to improve',
       icons:[
@@ -127,6 +133,9 @@ export default {
     }
   },
   methods: {
+    alternate_thanks_pop_up: function () {
+      this.showPopUp = !this.showPopUp;
+    },
     changeOpinionIcon(icon){
       this.opinion_icon = icon.name;
       this.path = "/assets/icons/" + icon.path + ".svg";
@@ -154,11 +163,15 @@ export default {
         this.message = ''
         this.opinion_icon= 'Choose the icon you want to improve'
         this.path= ''
+        // Prepare and show pop up thanking the user
+        this.popUp='Thank you for sending your opinion!'
+        this.showPopUp = true
       }
-
     },
     removeIcon(){
       this.design_icon = 'Choose the icon you want to improve'
+      this.popUp='Thank you for sending your design!'
+      this.showPopUp = true
     }
   }
 }
