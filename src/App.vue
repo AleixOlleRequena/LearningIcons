@@ -5,16 +5,10 @@ class="relative self-start -bottom-36 pl-2 scrollbar-hide" CLASS DE FOOTER A LEA
 class="absolute self-start bottom-0 pl-2 scrollbar-hide" CLASS DE FOOTER A INFORM PAGE i FEEDBACK-->
 
 <template>
-  <div class="h-auto w-auto flex flex-col mt-5">
+  <div class="h-auto w-auto flex flex-col mt-5 overflow-x-hidden">
     <Header></Header>
     <router-view></router-view>
-    <!-- <Header></Header> -->
-    <!-- <MainPage class="my-24 h-screen"></MainPage> -->
-    <!-- <LearningIcons></LearningIcons> -->
-    <!-- <InformPage></InformPage> -->
-    <!-- <FeedbackPage></FeedbackPage> -->
-    <!--<QuestionnairePage></QuestionnairePage> -->
-    <FooterPage class="absolute self-start bottom-0 pl-2 scrollbar-hide"></FooterPage>
+    <FooterPage class="absolute -bottom-60 pb-4 pl-2"></FooterPage>
   </div>
 </template>
 

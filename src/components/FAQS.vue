@@ -27,15 +27,15 @@ export default {
           value: 'Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth'
         },
         {
-          title: 'How long is a day and year on Venus?',
+          title: '¿How does it work?',
           value: 'Venus takes 224.7 Earth days to complete one orbit around the Sun.'
         },
         {
-          title: 'What animal smells like popcorn?',
+          title: '¿Can I use it on my web?',
           value: 'Binturongs smell like popcorn.'
         },
         {
-          title: 'What animal smells like popcorn?',
+          title: '¿Do I have to pay for it?',
           value: 'Binturongs smell like popcorn.'
         }
       ]

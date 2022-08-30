@@ -21,10 +21,8 @@ export default {
     FAQS
   },
   mounted() {
-    console.log("HOPLA QUE TAL")
   },
   beforeUnmount () {
-    console.log("HOPLA QUE TAL")
   }
 }
 
