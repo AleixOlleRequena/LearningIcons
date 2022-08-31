@@ -1,5 +1,5 @@
 <template>
-<div id="questionnaire" class="relative grid grid-cols-4 h-full">
+<div id="questionnaire" class="relative grid grid-cols-4">
   <!-- LEFT MENU-->
   <div class="relative flex flex-col items-center inset-y-1/2" >
     <p class="font-montserrat text-center my-4 hover:font-bold cursor-pointer" v-for="(group, index) in groups" :key="index" v-on:click="showGroup(group)">{{group.name}}</p>
@@ -200,7 +200,7 @@
               <h1 class="font-montserrat text-4xl font-light">{{groups[4].name}}</h1>
               <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[4].description}}</h2>
               <!-- QUESTIONNAIRE PART-->
-              <div  class="relative w-full h-full grid grid-rows-3 mt-24" >
+              <div  class="relative items-center w-full h-full grid grid-rows-3 mt-24" >
                 <div class="flex flex-row justify-around">
                   <div>
                     <input type="checkbox" id="no_anonymized" value="no_anonymized" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
@@ -246,12 +246,17 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                   </select>
                   <select id="periods" v-model="times_selected.storage_period" class="bg-gray-100 rounded border-gray-300">
                     <option value="Seconds">Seconds</option>
-                    <option value="Minutes">Minutes</option>
+                    <option value="minutes">Minutes</option>
                     <option value="Hours">Hours</option>
                     <option value="Days">Days</option>
+                    <option value="Months">Months</option>
                     <option value="Years">Years</option>
                   </select>
                 </div>
@@ -284,7 +289,7 @@
               </div>
             </div>
 
-            <!-- CENTRAL PART DATA TRANSFER-->
+            <!-- CENTRAL PART DATA PROCESSING-->
             <div id="questionnaire_data_processing" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="groups[5].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat text-4xl font-light">{{groups[5].name}}</h1>
@@ -310,12 +315,17 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                   </select>
                   <select id="periods1" v-model="times_selected.processing_period" class="bg-gray-100 rounded border-gray-300">
                     <option value="Seconds">Seconds</option>
-                    <option value="Minutes">Minutes</option>
+                    <option value="minutes">Minutes</option>
                     <option value="Hours">Hours</option>
                     <option value="Days">Days</option>
+                    <option value="Months">Months</option>
                     <option value="Years">Years</option>
                   </select>
 
@@ -326,7 +336,7 @@
   <!-- RIGHT PART WITH LICENSE IMAGE-->
   <div id="result_license" class="relative flex flex-col items-center mt-12 mx-2">
       <h1 class="font-montserrat text-4xl font-light mb-20">Your license:</h1>
-      <IconImage v-on:click="openInNewTab('https://ls-leda.github.io/learning-icons/')" ref="image" v-bind:checkedNames="checkedNames" class="w-full cursor-pointer"></IconImage>
+      <IconImage v-on:click="openInNewTab('https://ls-leda.github.io/learning-icons/#Icons')" ref="image" v-bind:checkedNames="checkedNames" v-bind:times_selected="times_selected" class="w-full cursor-pointer"></IconImage>
 
       <div class="relative flex flex-col items-center mt-8 w-full px-2" v-if="this.imageCode">
         <p class="font-montserrat font-bold mb-2">Copy this code to inform your students!</p>
@@ -352,6 +362,7 @@
       </div>
     </div>
 </div>
+  <FooterPage class="absolute self-start bottom-0 pl-2"></FooterPage>
 
 </template>
 
@@ -360,10 +371,11 @@
 import IconImage from "@/components/image";
 import { mdiHelpCircleOutline  } from "@mdi/js";
 import {createPopper} from "@popperjs/core";
+import FooterPage from "@/components/Footer";
 
 export default {
   name: "QuestionnairePage",
-  components: {IconImage},
+  components: {IconImage, FooterPage},
   data() {
     return {
       tooltipShow: [false, false, false, false,false, false],

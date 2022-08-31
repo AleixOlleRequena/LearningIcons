@@ -11,11 +11,17 @@
       </router-link>
     </div>
   </section>
+  <FooterPage class="absolute self-start bottom-0 pl-2 scrollbar-hide"></FooterPage>
+
 </template>
 
 <script>
+import FooterPage from "@/components/Footer";
 export default {
-  name: "InformPage"
+  name: "InformPage",
+  components:{
+    FooterPage
+  }
 }
 </script>
 

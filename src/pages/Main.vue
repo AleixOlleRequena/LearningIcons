@@ -21,10 +21,12 @@
       </div>
     </div>
   </div>
+  <FooterPage class="absolute -bottom-80 pb-4 pl-2"></FooterPage>
 
 </template>
 
 <script>
+import FooterPage from "@/components/Footer";
 export default {
   name: "MainPage",
   data() {
@@ -34,6 +36,9 @@ export default {
       route:"/learningIcons",
       timer : null
     }
+  },
+  components:{
+    FooterPage
   },
   methods: {
     changeImg(){

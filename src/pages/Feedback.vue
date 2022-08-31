@@ -47,6 +47,7 @@
   </div>
   <!-- POPUP THAT APPEARS WHEN USERS SEND OPINION OR DESIGN-->
   <ThanksPopUp v-bind:popUp="popUp" v-if="showPopUp" @thanksPopUp= "alternate_thanks_pop_up" class="font-montserrat text-xl text-center"></ThanksPopUp>
+  <FooterPage class="absolute self-start bottom-0 pl-2 scrollbar-hide"></FooterPage>
 </template>
 
 
@@ -56,13 +57,15 @@ import firebase from "firebase/compat/app";
 import {mdiChevronDown} from "@mdi/js";
 import SvgIcon from "@jamescoyle/vue-icon";
 import ThanksPopUp from "@/components/ThanksPopUp";
+import FooterPage from "@/components/Footer";
 
 export default {
   name: "FeedbackPage",
   components:{
     ThanksPopUp,
     DragDropArea,
-    SvgIcon
+    SvgIcon,
+    FooterPage
   },
   data() {
     return {

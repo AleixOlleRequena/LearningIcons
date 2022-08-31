@@ -9,16 +9,19 @@
     <h2 class="font-montserrat text-4xl self-center pb-6 mb-9">FAQ'S</h2>
     <FAQS></FAQS>
   </section>
+  <FooterPage class="relative self-start -bottom-36 pl-2 scrollbar-hide"></FooterPage>
 </template>
 
 <script>
 
 import FAQS from "@/components/FAQS";
+import FooterPage from "@/components/Footer";
 
 export default {
   name: "LearningIcons",
   components:{
-    FAQS
+    FAQS,
+    FooterPage
   },
   mounted() {
   },
