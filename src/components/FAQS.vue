@@ -23,20 +23,20 @@ export default {
     return {
       faqs: [
         {
-          title: '¿What is Learning Icons for?',
-          value: 'Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth'
+          title:  this.$t('FAQSQuestion1'),
+          value:  this.$t('FAQSAnswer1')
         },
         {
-          title: '¿How does it work?',
-          value: 'Venus takes 224.7 Earth days to complete one orbit around the Sun.'
+          title: this.$t('FAQSQuestion2'),
+          value: this.$t('FAQSAnswer2')
         },
         {
-          title: '¿Can I use it on my web?',
-          value: 'Binturongs smell like popcorn.'
+          title: this.$t('FAQSQuestion3'),
+          value: this.$t('FAQSAnswer3')
         },
         {
-          title: '¿Do I have to pay for it?',
-          value: 'Binturongs smell like popcorn.'
+          title: this.$t('FAQSQuestion4'),
+          value: this.$t('FAQSAnswer4')
         }
       ]
     }

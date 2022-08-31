@@ -7,13 +7,13 @@
     </div>
     <div id ="menu" class="col-span-2 grid grid-cols-3 space-x-4 items-center font-roboto font-bold text-xl">
       <div id ="learning" class="min-w-min justify-self-center transition ease-in-out hover:scale-110 duration-150">
-        <router-link to="/learningIcons">LEARNING ICONS</router-link>
+        <router-link to="/learningIcons">{{$t('Header1')}}</router-link>
       </div>
       <div id ="inform" class="transition ease-in-out hover:scale-110 duration-150">
-        <router-link to="/informYourStudents">INFORM YOUR STUDENTS</router-link>
+        <router-link to="/informYourStudents">{{$t('Header2')}}</router-link>
       </div>
       <div id ="feedback" class="transition ease-in-out hover:scale-110 duration-150">
-        <router-link to="/feedback">FEEDBACK</router-link>
+        <router-link to="/feedback">{{$t('Header3')}}</router-link>
       </div>
     </div>
   </div>

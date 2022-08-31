@@ -4,7 +4,7 @@
     <div id="dragDropMessage"  class="flex flex-col justify-center items-center" v-if="!imageData">
       <svg-icon class="justify-center"
                 type="mdi" :path="upload_file_icon"></svg-icon>
-      <span class="font-bold text-center text-xl"> Drag & Drop file here </span>
+      <span class="font-bold text-center text-xl"> {{ $t('DragDrop1') }}  </span>
       <span class="text-center text-xl"> or </span>
     </div>
 
@@ -13,11 +13,11 @@
     </div>
 
     <input type="file" ref="input" multiple @change="previewImage" accept="image/*" class="hidden" >
-    <button @click="this.$refs.input.click()" class="flex flex-row bg-blue-400 hover:bg-blue-500 rounded-lg px-6 py-3 mx-2 font-bold">Browse pictures</button>
+    <button @click="this.$refs.input.click()" class="flex flex-row bg-blue-400 hover:bg-blue-500 rounded-lg px-6 py-3 mx-2 font-bold">{{ $t('DragDrop2') }}</button>
     <div class="hidden" @click="this.$parent.$refs.upload.click()"></div>
   </div>
   <div class="flex flex-col mt-3 ">
-    <button v-show="imageData" @click="onUpload" class="mx-28 mt-64 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
+    <button v-show="imageData" @click="onUpload" class="mx-28 mt-64 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('DragDropButton') }}</button>
   </div>
 </template>
 
@@ -55,13 +55,13 @@ export default {
       this.uploadValue = 0;
       this.picture = null;
       if (this.imageData.length === 1) {
-        this.numberOfImages = "There is 1 image"
+        this.numberOfImages = this.$t('DragDrop1Image')
       } else {
-        this.numberOfImages = "There are " + this.imageData.length + " images"
+        this.numberOfImages = this.$t('DragDropImages1') + this.imageData.length + this.$t('DragDropImages2')
       }
     },
     onUpload() {
-      let text = "Do you want to send your design?"
+      let text = this.$t('DragDropQuestion')
       if (confirm(text) === true) {
         const post = {
           photo: this.imageData[0].name,

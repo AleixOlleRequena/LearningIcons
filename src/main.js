@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 
 import App from './App.vue'
+import i18n from './i18n'
 import './input.css'
 import router from "./router";
 import firebase from 'firebase/compat/app';
@@ -23,6 +24,7 @@ firebase.initializeApp(firebaseConfig);
 
 const application = createApp(App)
 application.use(router)
-application.mount('#app')
 
+
+i18n(application).mount('#app')
 

@@ -1,8 +1,8 @@
 <template>
   <section id="explicacio" class ="flex flex-col pt-20">
-    <h2 class="font-montserrat text-4xl self-center pb-6">WHAT IS LEARNING ICONS</h2>
+    <h2 class="font-montserrat text-4xl self-center pb-6">{{ $t('LearningIcons1') }}</h2>
     <div class="text-justify">
-      <p class="px-60 font-roboto self-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum in lorem nec euismod. Nunc porttitor porta imperdiet. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices. </p>
+      <p class="px-60 font-roboto self-center">{{ $t('LearningIcons2') }}</p>
     </div>
   </section>
   <section id="FAQS" class ="self-center flex flex-col w-2/3 pt-10">

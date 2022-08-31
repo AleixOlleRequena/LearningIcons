@@ -1,9 +1,9 @@
 <template>
   <div id="feedbackPage" class="flex flex-col pt-10 mx-5 z-5">
-    <h2 class="font-montserrat text-4xl self-center pb-8">HELP US TO KEEP IMPROVING</h2>
+    <h2 class="font-montserrat text-4xl self-center pb-8">{{ $t('Feedback1') }}</h2>
     <div id="feedbackSection" class=" grid grid-cols-2 ">
       <section id="opinion" class="flex flex-col">
-         <p class="font-roboto text-xl text-center pb-16">Give your opinion about the different icons we have created</p>
+         <p class="font-roboto text-xl text-center pb-16">{{ $t('Feedback2') }}</p>
         <!--DropDown menu-->
         <button @click="isShowOpinion = !isShowOpinion" class=" flex flex-row items-center justify-between mb-4 mx-28 shadow-md bg-white rounded-xl font-montserrat h-8  hover:bg-slate-50 active:bg-slate-200">
           {{opinion_icon}}
@@ -21,14 +21,14 @@
           <div class="-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
             <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative w-11/12 h-full font-roboto focus:outline-0" placeholder="Write your opinion here"></textarea>
           </div>
-          <button v-show="message" @click="sendOpinion" class="-mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">Send</button>
+          <button v-show="message" @click="sendOpinion" class="-mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
         </div>
       </section>
 
       <div id="line" class="absolute h-1/2 border border-solid left-1/2 border-black rounded"></div>
 
       <section id="design" class="flex flex-col">
-        <p class="font-roboto text-xl text-center pb-16 mx-5">If you think you have a good design, send us your propose and we will analise it to keep improving</p>
+        <p class="font-roboto text-xl text-center pb-16 mx-5">{{ $t('Feedback3') }}</p>
 
         <!--DropDown menu-->
         <button @click="isShowDesign = !isShowDesign" class=" flex flex-row items-center justify-between mb-4 mx-28 shadow-md bg-white rounded-xl font-montserrat h-8  hover:bg-slate-50 active:bg-slate-200">
@@ -73,60 +73,60 @@ export default {
       message: '',
       popUp:'',
       showPopUp:false,
-      opinion_icon:'Choose the icon you want to improve',
-      design_icon:'Choose the icon you want to improve',
+      opinion_icon: this.$t('FeedbackOpinion'),
+      design_icon: this.$t('FeedbackDesign'),
       icons:[
         {
-          name:"descriptive processing",
+          name: this.$t('FeedbackDescriptive'),
           path:"analisis_descriptivo"
         },
         {
-          name:"diagnostic processing",
+          name: this.$t('FeedbackDiagnostic'),
           path:"analisis_diagnostico"
         },{
-          name:"predictive processing",
+          name: this.$t('FeedbackPredictive'),
           path:"analisis_predictivo"
         },{
-          name:"prescriptive processing",
+          name: this.$t('FeedbackPrescriptive'),
           path:"analisis_prescriptivo"
         },{
-          name:"cookies",
+          name: this.$t('FeedbackCookies'),
           path:"cookies"
         },{
-          name:"caching techniques",
+          name: this.$t('FeedbackCache') ,
           path:"cache"
         },{
-          name:"personal data gathering",
+          name: this.$t('FeedbackPersonal'),
           path:"recoleccion_datos_personales"
         },{
-          name:"general data gathering",
+          name: this.$t('FeedbackGeneral'),
           path:"recoleccion_datos_no_personales"
         },{
-          name:"metadata gathering",
+          name: this.$t('FeedbackMetadata'),
           path:"metadata"
         },{
-          name:"third-party data transfer",
+          name: this.$t('FeedbackTransferExtern'),
           path:"transfer_extern"
         },{
-          name:"intern data transfer",
+          name: this.$t('FeedbackTransferIntern'),
           path:"transfer_internal"
         },{
-          name:"no anonymized data",
+          name: this.$t('FeedbackNotAnonymized'),
           path:"no_anonymized"
         },{
-          name:"anonymized data",
+          name: this.$t('FeedbackAnonymized'),
           path:"anonymized"
         },{
-          name:"data stored during x time",
+          name: this.$t('FeedbackStored'),
           path:"stored_x_time"
         },{
-          name:"pseudoanonymized data",
+          name: this.$t('FeedbackPseudoanonymized'),
           path:"pseudoanonymized"
         },{
-          name:"Encrypted data",
+          name: this.$t('FeedbackEncrypted'),
           path:"encrypted"
         },{
-          name:"data processed during x time",
+          name: this.$t('FeedbackProcessed'),
           path:"processed_x_time"
         },
       ],
@@ -147,7 +147,7 @@ export default {
       this.design_icon = icon.name;
     },
     sendOpinion() {
-      let text="Do you want to send your opinion?"
+      let text=this.$t('FeedbackQuestion')
       if(confirm(text) === true){
         const post = {
           icon: this.opinion_icon,
@@ -164,16 +164,16 @@ export default {
             })
         // Reset form field
         this.message = ''
-        this.opinion_icon= 'Choose the icon you want to improve'
+        this.opinion_icon= this.$t('FeedbackOpinion')
         this.path= ''
         // Prepare and show pop up thanking the user
-        this.popUp='Thank you for sending your opinion!'
+        this.popUp= this.$t('FeedbackOpinionThank')
         this.showPopUp = true
       }
     },
     removeIcon(){
-      this.design_icon = 'Choose the icon you want to improve'
-      this.popUp='Thank you for sending your design!'
+      this.design_icon = this.$t('FeedbackDesign')
+      this.popUp= this.$t('FeedbackDesignThank')
       this.showPopUp = true
     }
   }
