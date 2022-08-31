@@ -1,5 +1,5 @@
 <template>
-<div id="questionnaire" class="relative grid grid-cols-4">
+<div id="questionnaire" class="relative grid grid-cols-4 ">
   <!-- LEFT MENU-->
   <div class="relative flex flex-col items-center inset-y-1/2" >
     <p class="font-montserrat text-center my-4 hover:font-bold cursor-pointer" v-for="(group, index) in groups" :key="index" v-on:click="showGroup(group)">{{group.name}}</p>
@@ -9,7 +9,7 @@
   <div  class="absolute h-96 border border-solid left-3/4 border-black rounded mt-36"></div>
 
             <!-- CENTRAL PART ANALYTICAL PROCESSING-->
-            <div id="questionnaire_analytical" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="groups[0].active">
+            <div id="questionnaire_analytical" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[0].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat text-4xl font-light">{{groups[0].name}}</h1>
               <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[0].description}}</h2>
@@ -18,7 +18,7 @@
                   <div class="flex flex-row justify-around">
                     <div>
                       <input type="checkbox" id="descriptive processing" value="descriptive_processing" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                      <label for="descriptive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{ $t('QuestionnaireProcessing') }}</label>
+                      <label for="descriptive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{ $t('Descriptive') }}</label>
                       <!-- TOOLTIP EXPLANATION-->
                       <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[0], 'block': tooltipShow[0]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left no-underline break-words rounded-lg">
                         <div>
@@ -30,7 +30,7 @@
                     </div>
                     <div>
                       <input type="checkbox" id="diagnostic processing" value="diagnostic_processing" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                      <label for="diagnostic processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{ $t('QuestionnaireDiagnostic') }}</label>
+                      <label for="diagnostic processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{ $t('Diagnostic') }}</label>
                       <!-- TOOLTIP EXPLANATION-->
                       <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[1], 'block': tooltipShow[1]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                         <div>
@@ -44,7 +44,7 @@
                   <div class="flex flex-row justify-around mt-12">
                     <div>
                       <input type="checkbox" id="predictive processing" value="predictive_processing" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                      <label for="predictive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(2)" v-on:mouseleave="toggleTooltip(2)" >{{ $t('QuestionnairePredictive') }}</label>
+                      <label for="predictive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(2)" v-on:mouseleave="toggleTooltip(2)" >{{ $t('Predictive') }}</label>
                       <!-- TOOLTIP EXPLANATION-->
                       <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[2], 'block': tooltipShow [2]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                         <div>
@@ -56,7 +56,7 @@
                     </div>
                     <div>
                       <input type="checkbox" id="prescriptive processing" value="prescriptive_processing" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                      <label for="prescriptive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(3)" v-on:mouseleave="toggleTooltip(3)" >{{ $t('QuestionnairePrescriptive') }}</label>
+                      <label for="prescriptive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(3)" v-on:mouseleave="toggleTooltip(3)" >{{ $t('Prescriptive') }}</label>
                       <!-- TOOLTIP EXPLANATION-->
                       <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[3], 'block': tooltipShow[3]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                         <div>
@@ -71,7 +71,7 @@
             </div>
 
             <!-- CENTRAL PART COOKIES & CACHE-->
-            <div id="questionnaire_cookies" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="groups[1].active">
+            <div id="questionnaire_cookies" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[1].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat text-4xl font-light">{{groups[1].name}}</h1>
               <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[1].description}}</h2>
@@ -80,7 +80,7 @@
                 <div class="flex flex-row justify-around">
                   <div>
                     <input type="checkbox" id="cookies" value="cookies" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="cookies" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('QuestionnaireCookies')}}</label>
+                    <label for="cookies" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('Cookies')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[0], 'block': tooltipShow[0]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -92,7 +92,7 @@
                   </div>
                   <div>
                     <input type="checkbox" id="local_cache" value="local_cache" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="local_cache" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('QuestionnaireCache')}}</label>
+                    <label for="local_cache" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('Cache')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[1], 'block': tooltipShow[1]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -107,7 +107,7 @@
             </div>
 
             <!-- CENTRAL PART DATA COLLECTION-->
-            <div id="questionnaire_data_gathering"  class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="groups[2].active">
+            <div id="questionnaire_data_gathering"  class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[2].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat text-4xl font-light">{{groups[2].name}}</h1>
               <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[2].description}}</h2>
@@ -116,7 +116,7 @@
                 <div class="flex flex-row justify-around">
                   <div>
                     <input type="checkbox" id="personal_data" value="personal_data" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="personal_data" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('QuestionnairePersonal')}}</label>
+                    <label for="personal_data" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('Personal')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[0], 'block': tooltipShow[0]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -128,7 +128,7 @@
                   </div>
                   <div>
                     <input type="checkbox" id="general_data" value="general_data" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="general_data" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('QuestionnaireGeneral')}}</label>
+                    <label for="general_data" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('General')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[1], 'block': tooltipShow[1]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -144,7 +144,7 @@
                 <div class="flex flex-row">
                   <div>
                     <input type="checkbox" id="metadata" value="metadata" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="metadata" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(2)" v-on:mouseleave="toggleTooltip(2)" >{{$t('QuestionnaireMetadata')}}</label>
+                    <label for="metadata" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(2)" v-on:mouseleave="toggleTooltip(2)" >{{$t('Metadata')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[2], 'block': tooltipShow[2]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -159,7 +159,7 @@
             </div>
 
             <!-- CENTRAL PART DATA TRANSFER-->
-            <div id="questionnaire_data_transfer" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="groups[3].active">
+            <div id="questionnaire_data_transfer" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[3].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat text-4xl font-light">{{groups[3].name}}</h1>
               <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[3].description}}</h2>
@@ -168,7 +168,7 @@
                 <div class="flex flex-row justify-around">
                   <div>
                     <input type="checkbox" id="third_party" value="third_party" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="third_party" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('QuestionnaireTransferExtern')}}</label>
+                    <label for="third_party" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('TransferExtern')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[0], 'block': tooltipShow[0]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -180,7 +180,7 @@
                   </div>
                   <div>
                     <input type="checkbox" id="intern" value="intern_transfer" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="intern" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('QuestionnaireTransferIntern')}}</label>
+                    <label for="intern" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('TransferIntern')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[1], 'block': tooltipShow[1]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -195,7 +195,7 @@
             </div>
 
             <!-- CENTRAL PART DATA STORAGE-->
-            <div id="questionnaire_data_storage" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="groups[4].active">
+            <div id="questionnaire_data_storage" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[4].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat text-4xl font-light">{{groups[4].name}}</h1>
               <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[4].description}}</h2>
@@ -204,7 +204,7 @@
                 <div class="flex flex-row justify-around">
                   <div>
                     <input type="checkbox" id="no_anonymized" value="no_anonymized" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="no_anonymized" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('QuestionnaireNotAnonymized')}} </label>
+                    <label for="no_anonymized" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('NotAnonymized')}} </label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[0], 'block': tooltipShow[0]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -216,7 +216,7 @@
                   </div>
                   <div>
                     <input type="checkbox" id="anonymized" value="anonymized" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
-                    <label for="anonymized" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('QuestionnaireAnonymized')}}</label>
+                    <label for="anonymized" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(1)" v-on:mouseleave="toggleTooltip(1)" >{{$t('Anonymized')}}</label>
                     <!-- TOOLTIP EXPLANATION-->
                     <div ref="tooltipRef" v-bind:class="{'hidden': !tooltipShow[1], 'block': tooltipShow[1]}" class="absolute bg-blue-500 border-0 ml-3 block z-50 font-normal leading-normal text-sm max-w-xs text-left break-words rounded-lg">
                       <div>
@@ -290,7 +290,7 @@
             </div>
 
             <!-- CENTRAL PART DATA PROCESSING-->
-            <div id="questionnaire_data_processing" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="groups[5].active">
+            <div id="questionnaire_data_processing" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[5].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat text-4xl font-light">{{groups[5].name}}</h1>
               <h2 class="font-montserrat text-2xl font-light mt-4">{{groups[5].description}}</h2>
@@ -352,9 +352,9 @@
   <div id="buttons" class="absolute grid grid-rows-2 items-center col-start-2 col-end-4 w-full -bottom-60 gap-y-8">
       <div class="flex flex-row justify-around ">
         <!-- PREVIOUS BUTTON-->
-        <button v-if="groups[0].active === false" v-on:click="previousPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-200 active:bg-slate-200">{{$t('QuestionnairePreviousButton')}}</button>
+        <button v-if="active_group[0].active === false" v-on:click="previousPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-200 active:bg-slate-200">{{$t('QuestionnairePreviousButton')}}</button>
         <!-- NEXT BUTTON-->
-        <button v-if="groups[5].active === false" v-on:click="nextPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-200 active:bg-slate-200">{{$t('QuestionnaireNextButton')}}</button>
+        <button v-if="active_group[5].active === false" v-on:click="nextPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-200 active:bg-slate-200">{{$t('QuestionnaireNextButton')}}</button>
       </div>
       <div class="flex flex-row justify-center">
         <!-- CREATE LICENSE BUTTON-->
@@ -384,45 +384,58 @@ export default {
       imageCode:'',
       checkedNames: [],
       times_selected: {
-      storage_time: '',
-      storage_period:'',
-      processing_time: '',
-      processing_period:''
+        storage_time: '',
+        storage_period: '',
+        processing_time: '',
+        processing_period: ''
+      },
+      active_group:[
+        {active: true},
+        {active: false},
+        {active: false},
+        {active: false},
+        {active: false},
+        {active: false}
+    ]
+    }
+  },
+  computed:{
+    groups(){
+      return [
+      {
+        name: this.$t('QuestionnaireAnalyticalName'),
+        description: this.$t('QuestionnaireAnalyticalDescription'),
+        active: true
+      },
+      {
+        name: this.$t('QuestionnaireCookiesName'),
+        description: this.$t('QuestionnaireCookiesDescription'),
+        active: false
+      },
+      {
+        name: this.$t('QuestionnaireCollectionName'),
+        description: this.$t('QuestionnaireCollectionDescription'),
+        active: false
+      },
+      {
+        name: this.$t('QuestionnaireTransferName'),
+        description: this.$t('QuestionnaireTransferDescription'),
+        active: false
+      },
+      {
+        name: this.$t('QuestionnaireStorageName'),
+        description: this.$t('QuestionnaireStorageDescription'),
+        active: false
+      },
+      {
+        name: this.$t('QuestionnaireProcessingName'),
+        description: this.$t('QuestionnaireProcessingDescription'),
+        active: false
+      }
+    ]
     },
-      groups:[
-          {
-            name: this.$t('QuestionnaireAnalyticalName'),
-            description: this.$t('QuestionnaireAnalyticalDescription'),
-            active: true
-          },
-          {
-            name: this.$t('QuestionnaireCookiesName'),
-            description: this.$t('QuestionnaireCookiesDescription'),
-            active: false
-          },
-          {
-            name: this.$t('QuestionnaireCollectionName'),
-            description: this.$t('QuestionnaireCollectionDescription'),
-            active: false
-          },
-          {
-            name: this.$t('QuestionnaireTransferName'),
-            description: this.$t('QuestionnaireTransferDescription'),
-            active: false
-          },
-          {
-            name: this.$t('QuestionnaireStorageName'),
-            description: this.$t('QuestionnaireStorageDescription'),
-            active: false
-          },
-          {
-            name: this.$t('QuestionnaireProcessingName'),
-            description: this.$t('QuestionnaireProcessingDescription'),
-            active: false
-          }
-        ],
-      information:[
-        this.$t('QuestionnaireExplanation1'),
+    information(){
+      return[this.$t('QuestionnaireExplanation1'),
         this.$t('QuestionnaireExplanation2'),
         this.$t('QuestionnaireExplanation3'),
         this.$t('QuestionnaireExplanation4'),
@@ -438,30 +451,29 @@ export default {
         this.$t('QuestionnaireExplanation14'),
         this.$t('QuestionnaireExplanation15'),
         this.$t('QuestionnaireExplanation16'),
-        this.$t('QuestionnaireExplanation17')
-      ]
+        this.$t('QuestionnaireExplanation17')]
     }
   },
   methods:{
     previousPage(){
-      const found = this.groups.findIndex(e => e.active === true);
+      const found = this.active_group.findIndex(e => e.active === true);
 
-      this.groups[found].active = false;
-      this.groups[found - 1].active = true;
+      this.active_group[found].active = false;
+      this.active_group[found - 1].active = true;
     },
     nextPage(){
-      const found = this.groups.findIndex(e => e.active === true);
+      const found = this.active_group.findIndex(e => e.active === true);
 
-      this.groups[found].active = false;
-      this.groups[found + 1].active = true;
+      this.active_group[found].active = false;
+      this.active_group[found + 1].active = true;
     },
     showGroup(group){
       const found = this.groups.findIndex(e => e.name === group.name);
       console.log(found)
       for (let i = 0; i < this.groups.length; i++) {
-
-        this.groups[i].active = i === found;
+        this.active_group[i].active = i === found;
       }
+      console.log(this.active_group[0].active)
     },
     getImageCode(){
       this.imageCode = this.$refs.image.$el.innerHTML;

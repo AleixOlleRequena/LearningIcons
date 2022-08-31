@@ -1,11 +1,8 @@
 <template>
-  <div class="absolute right-0 top-0">
-    <h1>{{ $t('welcome') }}</h1>
-    <p v-html="$t('descr')"></p>
-    <hr />
+  <div class="absolute right-0 top-0 mt-1 mr-5">
     <div>
       <div v-if="languages">
-        <span v-for="(lng, index) in Object.keys(languages)" :key="lng">
+        <span v-for="(lng, index) in Object.keys(languages)" :key="lng" class="cursor-pointer">
           <a v-if="$i18next.resolvedLanguage !== lng" v-on:click="$i18next.changeLanguage(lng)">
             {{ languages[lng].nativeName }}
           </a>
@@ -25,8 +22,8 @@ export default {
   data () {
     return {
       languages: {
-        en: {nativeName: 'English'},
-        de: {nativeName: 'Deutsch'}
+        en: {nativeName: 'EN'},
+        es: {nativeName: 'ES'}
       }
     }
   }

@@ -17,12 +17,15 @@
       </div>
     </div>
   </div>
+  <language-switcher></language-switcher>
 </template>
 
 <script>
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "Header"
+  name: "Header",
+  components: {LanguageSwitcher}
 }
 </script>
 

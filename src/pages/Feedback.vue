@@ -19,7 +19,7 @@
         <div v-if="path"  class="absolute z-0 flex flex-col w-96 self-center mt-12 top-80">
           <img :src="path" class=" h-52 self-center mb-3">
           <div class="-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
-            <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative w-11/12 h-full font-roboto focus:outline-0" placeholder="Write your opinion here"></textarea>
+            <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative w-11/12 h-full font-roboto focus:outline-0" ></textarea>
           </div>
           <button v-show="message" @click="sendOpinion" class="-mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
         </div>
@@ -73,67 +73,75 @@ export default {
       message: '',
       popUp:'',
       showPopUp:false,
-      opinion_icon: this.$t('FeedbackOpinion'),
-      design_icon: this.$t('FeedbackDesign'),
-      icons:[
-        {
-          name: this.$t('FeedbackDescriptive'),
-          path:"analisis_descriptivo"
-        },
-        {
-          name: this.$t('FeedbackDiagnostic'),
-          path:"analisis_diagnostico"
-        },{
-          name: this.$t('FeedbackPredictive'),
-          path:"analisis_predictivo"
-        },{
-          name: this.$t('FeedbackPrescriptive'),
-          path:"analisis_prescriptivo"
-        },{
-          name: this.$t('FeedbackCookies'),
-          path:"cookies"
-        },{
-          name: this.$t('FeedbackCache') ,
-          path:"cache"
-        },{
-          name: this.$t('FeedbackPersonal'),
-          path:"recoleccion_datos_personales"
-        },{
-          name: this.$t('FeedbackGeneral'),
-          path:"recoleccion_datos_no_personales"
-        },{
-          name: this.$t('FeedbackMetadata'),
-          path:"metadata"
-        },{
-          name: this.$t('FeedbackTransferExtern'),
-          path:"transfer_extern"
-        },{
-          name: this.$t('FeedbackTransferIntern'),
-          path:"transfer_internal"
-        },{
-          name: this.$t('FeedbackNotAnonymized'),
-          path:"no_anonymized"
-        },{
-          name: this.$t('FeedbackAnonymized'),
-          path:"anonymized"
-        },{
-          name: this.$t('FeedbackStored'),
-          path:"stored_x_time"
-        },{
-          name: this.$t('FeedbackPseudoanonymized'),
-          path:"pseudoanonymized"
-        },{
-          name: this.$t('FeedbackEncrypted'),
-          path:"encrypted"
-        },{
-          name: this.$t('FeedbackProcessed'),
-          path:"processed_x_time"
-        },
-      ],
       chevron: mdiChevronDown,
       isShowOpinion: false,
       isShowDesign: false,
     }
+  },
+  computed:{
+    icons(){
+      return [
+        {
+          name: this.$t('Descriptive'),
+          path:"analisis_descriptivo"
+        },
+        {
+          name: this.$t('Diagnostic'),
+          path:"analisis_diagnostico"
+        },{
+      name: this.$t('Predictive'),
+          path:"analisis_predictivo"
+    },{
+      name: this.$t('Prescriptive'),
+          path:"analisis_prescriptivo"
+    },{
+      name: this.$t('Cookies'),
+          path:"cookies"
+    },{
+      name: this.$t('Cache') ,
+          path:"cache"
+    },{
+      name: this.$t('Personal'),
+          path:"recoleccion_datos_personales"
+    },{
+      name: this.$t('General'),
+          path:"recoleccion_datos_no_personales"
+    },{
+      name: this.$t('Metadata'),
+          path:"metadata"
+    },{
+      name: this.$t('TransferExtern'),
+          path:"transfer_extern"
+    },{
+      name: this.$t('TransferIntern'),
+          path:"transfer_internal"
+    },{
+      name: this.$t('NotAnonymized'),
+          path:"no_anonymized"
+    },{
+      name: this.$t('Anonymized'),
+          path:"anonymized"
+    },{
+      name: this.$t('Stored'),
+          path:"stored_x_time"
+    },{
+      name: this.$t('Pseudoanonymized'),
+          path:"pseudoanonymized"
+    },{
+      name: this.$t('Encrypted'),
+          path:"encrypted"
+    },{
+      name: this.$t('Processed'),
+          path:"processed_x_time"
+    },
+]
+    },
+    opinion_icon(){
+      return this.$t('FeedbackOpinion')
+    },
+    design_icon(){
+      return    this.$t('FeedbackDesign')
+          }
   },
   methods: {
     alternate_thanks_pop_up: function () {

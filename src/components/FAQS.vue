@@ -17,11 +17,10 @@ export default {
   name: "FAQS",
   components:{
     AppAccordion
-
   },
-  data () {
-    return {
-      faqs: [
+  computed:{
+    faqs(){
+      return[
         {
           title:  this.$t('FAQSQuestion1'),
           value:  this.$t('FAQSAnswer1')
