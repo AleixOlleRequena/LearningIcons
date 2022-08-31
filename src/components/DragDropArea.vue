@@ -1,5 +1,5 @@
 <template>
-  <div id="dragDropArea" @dragover.prevent @drop.prevent @dragover="dragover" @dragleave="dragleave" @drop="dragFile" class="absolute z-0 w-2/5 self-center mt-12 top-80 flex flex-col rounded-3xl border-2 border-black border-dashed h-52 justify-center items-center">
+  <div id="dragDropArea" @dragover.prevent @drop.prevent @dragover="dragover" @dragleave="dragleave" @drop="dragFile" class="absolute z-0 w-2/5 self-center lg:mt-12 md:mt-24 top-80 flex flex-col rounded-3xl border-2 border-black border-dashed h-52 justify-center items-center">
 
     <div id="dragDropMessage"  class="flex flex-col justify-center items-center" v-if="!imageData">
       <svg-icon class="justify-center"

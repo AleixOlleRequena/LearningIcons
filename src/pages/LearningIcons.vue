@@ -2,7 +2,7 @@
   <section id="explicacio" class ="flex flex-col pt-20">
     <h2 class="font-montserrat text-4xl self-center pb-6">{{ $t('LearningIcons1') }}</h2>
     <div class="text-justify">
-      <p class="px-60 font-roboto self-center">{{ $t('LearningIcons2') }}</p>
+      <p class="md:px-10 lg:px-60 font-roboto self-center">{{ $t('LearningIcons2') }}</p>
     </div>
   </section>
   <section id="FAQS" class ="self-center flex flex-col w-2/3 pt-10">

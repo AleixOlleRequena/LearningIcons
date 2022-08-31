@@ -3,13 +3,13 @@
     <h2 class="font-montserrat text-4xl self-center pb-8">{{ $t('Feedback1') }}</h2>
     <div id="feedbackSection" class=" grid grid-cols-2 ">
       <section id="opinion" class="flex flex-col">
-         <p class="font-roboto text-xl text-center pb-16">{{ $t('Feedback2') }}</p>
+         <p class="font-roboto text-xl text-center md:pb-16 lg:pb-12">{{ $t('Feedback2') }}</p>
         <!--DropDown menu-->
-        <button @click="isShowOpinion = !isShowOpinion" class=" flex flex-row items-center justify-between mb-4 mx-28 shadow-md bg-white rounded-xl font-montserrat h-8  hover:bg-slate-50 active:bg-slate-200">
+        <button @click="isShowOpinion = !isShowOpinion" class=" flex flex-row items-center justify-between shadow-md bg-white rounded-xl font-montserrat h-8 lg:mx-24 mt-8 md:-mt-2 w-4/5 self-center hover:bg-slate-50 active:bg-slate-200">
           {{opinion_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
-        <div v-if="isShowOpinion" id="dropdown" class=" z-20 select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
+        <div v-if="isShowOpinion" id="dropdown" class=" z-20 select-none bg-white rounded divide-y divide-gray-100 max-h-96 overflow-auto lg:mx-24 mt-2 md:-mt-2 w-4/5 self-center" >
           <div id="list" v-for="(icon, index) in icons" :key="index" class="relative z-40">
             <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 " @click="isShowOpinion = !isShowOpinion" v-on:click="changeOpinionIcon(icon)">{{ icon.name }}</p>
           </div>
@@ -18,24 +18,24 @@
         <!--image and opinion-->
         <div v-if="path"  class="absolute z-0 flex flex-col w-96 self-center mt-12 top-80">
           <img :src="path" class=" h-52 self-center mb-3">
-          <div class="-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
-            <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative w-11/12 h-full font-roboto focus:outline-0" ></textarea>
+          <div class=" md:mx-10 lg:-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
+            <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative  h-full font-roboto lg:w-11/12 md:w-60 focus:outline-0" ></textarea>
           </div>
-          <button v-show="message" @click="sendOpinion" class="-mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
+          <button v-show="message" @click="sendOpinion" class="md:w-36 self-center lg:mx-28 mt-16 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
         </div>
       </section>
 
       <div id="line" class="absolute h-1/2 border border-solid left-1/2 border-black rounded"></div>
 
       <section id="design" class="flex flex-col">
-        <p class="font-roboto text-xl text-center pb-16 mx-5">{{ $t('Feedback3') }}</p>
+        <p class="font-roboto text-xl text-center pb-9 mx-5">{{ $t('Feedback3') }}</p>
 
         <!--DropDown menu-->
-        <button @click="isShowDesign = !isShowDesign" class=" flex flex-row items-center justify-between mb-4 mx-28 shadow-md bg-white rounded-xl font-montserrat h-8  hover:bg-slate-50 active:bg-slate-200">
+        <button @click="isShowDesign = !isShowDesign" class="flex flex-row items-center justify-between shadow-md bg-white rounded-xl font-montserrat h-8 md:w-4/5 self-center lg:mx-28 hover:bg-slate-50 active:bg-slate-200">
           {{design_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
-        <div v-if="isShowDesign" id="dropdown2" class=" relative z-50 select-none -mt-2 bg-white mx-28 rounded divide-y divide-gray-100 max-h-96 overflow-auto" >
+        <div v-if="isShowDesign" id="dropdown2" class=" relative z-50 select-none bg-white rounded divide-y divide-gray-100 max-h-96 overflow-auto lg:mx-24 mt-2 md:-mt-2 w-4/5 self-center" >
           <div  id="list2" v-for="(icon, index) in icons" :key="index" >
             <p class=" flex mx-2 items-center font-roboto py-4 h-4 hover:bg-slate-50 z-50" @click="isShowDesign = !isShowDesign" v-on:click="changeDesignIcon(icon)">{{ icon.name }}</p>
           </div>
@@ -76,6 +76,8 @@ export default {
       chevron: mdiChevronDown,
       isShowOpinion: false,
       isShowDesign: false,
+      opinion_icon: '',
+      design_icon: ''
     }
   },
   computed:{
@@ -135,13 +137,7 @@ export default {
           path:"processed_x_time"
     },
 ]
-    },
-    opinion_icon(){
-      return this.$t('FeedbackOpinion')
-    },
-    design_icon(){
-      return    this.$t('FeedbackDesign')
-          }
+    }
   },
   methods: {
     alternate_thanks_pop_up: function () {

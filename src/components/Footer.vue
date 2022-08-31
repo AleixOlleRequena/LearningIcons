@@ -1,6 +1,6 @@
 <template>
 <section>
-  <div class="flex flex-row justify-center">
+  <div class="flex flex-row justify-center md:absolute -bottom-10 left-0">
     <svg-icon class="cursor-pointer" type="mdi" :path= "twitter" width=55 height=55 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>
     <svg-icon class="cursor-pointer" type="mdi" :path="facebook" width=55 height=55 color="white" @click="openWeb('https://www.upc.edu/')"></svg-icon>
     <svg-icon class="cursor-pointer" type="mdi" :path="blog" width=55 height=55 color="white" @click="openWeb('https://blogs.salleurl.edu/en/technology-learning')"></svg-icon>

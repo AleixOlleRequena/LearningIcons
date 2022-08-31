@@ -1,5 +1,5 @@
 <template>
-  <section id="questionnaire_explanation" class="self-center flex flex-col w-1/3 pt-28">
+  <section id="questionnaire_explanation" class="self-center flex flex-col lg:w-1/3 pt-28 md:w-1/2">
     <h2 class="font-montserrat text-2xl self-center pb-6 text-center">{{ $t('informPage1') }}</h2>
     <div class="flex flex-col text-justify justify-center pt-20">
       <h1 class="font-montserrat text-2xl self-center pb-10">{{ $t('informPage2') }}</h1>

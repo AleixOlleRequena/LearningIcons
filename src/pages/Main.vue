@@ -1,21 +1,21 @@
 <template>
-  <div id="mainPage" class="relative h-screen grid grid-rows-3 ">
+  <div id="mainPage" class="lg:relative h-screen grid grid-rows-3 md:flex flex-col">
     <div id="links" class="relative h-max flex flex-col justify-items-end mt-4">
       <router-link :to="route">
         <img :src="path" class="w-screen">
         <h1 class="font-montserrat text-6xl px-6">{{ name }}</h1>
       </router-link>
     </div>
-    <div id="explicacio" class ="relative flex flex-col pt-44">
-      <h2 class="font-montserrat text-4xl self-center pb-6">{{ $t('Main1') }}</h2>
+    <div id="explicacio" class =" md:relative relative flex flex-col lg:pt-44">
+      <h2 class="font-montserrat text-4xl self-center pb-6 md:mt-16 lg:-mt-16 ">{{ $t('Main1') }}</h2>
       <div class="text-center">
-        <p class="px-60 font-roboto self-center">{{ $t('Main2') }} </p>
+        <p class="font-roboto self-center lg:px-60 md:px-16 ">{{ $t('Main2') }} </p>
       </div>
     </div>
-    <div id="collaborators" class="relative w-screen grid grid-rows-2 justify-center">
-      <h2 class="font-montserrat text-4xl justify-self-center self-end">{{ $t('Main3') }}</h2>
-      <div id="collaboratorsImages" class="flex flex-row justify-center">
-        <img src="/assets/lasalle.png" @click="openInNewTab('https://www.salleurl.edu')" class="scale-50 cursor-pointer">
+    <div id="collaborators" class="relative w-screen justify-center md:flex flex-col lg:grid grid-rows-2">
+      <h2 class="font-montserrat text-4xl justify-self-center  md:self-center mt-10  ">{{ $t('Main3') }}</h2>
+      <div id="collaboratorsImages" class="flex justify-center lg:grid grid-cols-3 place-items-center  md:flex-col mt-20 ">
+        <img src="/assets/lasalle.png" @click="openInNewTab('https://www.salleurl.edu')" class="md:scale-150 lg:scale-100 cursor-pointer">
         <img src="/assets/upc.png" @click="openInNewTab('https://www.upc.edu/')" class="scale-50 cursor-pointer">
         <img src="/assets/usal.png" @click="openInNewTab('https://www.usal.es/')" class="scale-50 cursor-pointer">
       </div>
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     changeImg(){
-       this.timer = setInterval(() => {
+      this.timer = setInterval(() => {
         if(this.name === "LEARNING ICONS"){
           this.path = "/assets/imatge.svg"
           this.name = "GIVE YOUR OPINION"
@@ -56,7 +56,7 @@ export default {
     },
     openInNewTab(url) {
       window.open(url);
-}
+    }
   },
   mounted() {
     this.changeImg();
