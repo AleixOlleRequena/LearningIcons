@@ -3,6 +3,7 @@
     <h2 class="font-montserrat text-2xl sm:text-4xl text-center self-center pb-8">{{ $t('Feedback1') }}</h2>
     <div id="feedbackSection" class=" sm:grid sm:grid-cols-2 sm:grid-rows-1 ">
       <!-- PAGES FOR PC USERS-->
+      <!-- OPINION SECTION-->
       <section id="opinion" class=" hidden sm:flex row-start-2 row-end-2 flex flex-col sm:mt-0 sm:row-start-1">
          <p class="font-roboto text-xl text-center md:mx-2 md:pb-16 lg:pb-9 xl:pb-12">{{ $t('Feedback2') }}</p>
         <!--DropDown menu opinion-->
@@ -25,7 +26,9 @@
           <button v-show="message" @click="sendOpinion" class="self-center w-36 mt-12 md:w-36 md:mt-4 lg:w-2/3 lg:mt-16 xl:mx-28  shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
         </div>
       </section>
+      <!-- SEPARATION LINE-->
       <div id="line" class=" hidden sm:block absolute h-1/2 border border-solid left-1/2 border-black rounded"></div>
+      <!-- DESIGN SECTION-->
       <section id="design" class="hidden sm:flex row-start-1 row-end-1 flex flex-col justify-items-center">
         <p class="font-roboto text-xl text-center pb-9 lg:pb-7 mx-5">{{ $t('Feedback3') }}</p>
 
@@ -44,6 +47,7 @@
       </section>
 
       <!-- PAGES FOR MOBILE USERS-->
+      <!-- OPINION SECTION-->
       <section id="opinionMobile" v-if="opinionPage" class="sm:hidden row-start-2 row-end-2 flex flex-col sm:mt-0 sm:row-start-1">
         <p class="font-roboto text-xl text-center md:mx-2 md:pb-16 lg:pb-9 xl:pb-12">{{ $t('Feedback2') }}</p>
         <!--DropDown menu opinion-->
@@ -66,6 +70,7 @@
           <button v-show="message" @click="sendOpinion" class="self-center w-36 mt-12 md:w-36 md:mt-4 lg:w-2/3 lg:mt-16 xl:mx-28  shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
         </div>
       </section>
+      <!-- DESIGN SECTION-->
       <section id="designMobile" v-if="!opinionPage" class="sm:hidden row-start-1 row-end-1 flex flex-col">
         <p class="font-roboto text-xl text-center pb-9 lg:pb-7 mx-5">{{ $t('Feedback3') }}</p>
 
@@ -82,6 +87,7 @@
 
         <DragDropArea v-bind:design_icon="design_icon" @removeIcon="removeIcon" ></DragDropArea>
       </section>
+      <!-- Buttons to chenga between mobile sections-->
       <button  @click="opinionPage = !opinionPage" v-show="opinionPage" class="sm:hidden absolute z-20 -rotate-90 items-center right-2 bottom-10 shadow-md rounded-xl font-montserrat ">
         <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center "></svg-icon>
       </button>
@@ -214,7 +220,7 @@ export default {
             })
         // Reset form field
         this.message = ''
-        this.opinion_icon= this.$t('FeedbackOpinion')
+        this.opinion_icon= ''
         this.path= ''
         // Prepare and show pop up thanking the user
         this.popUp= this.$t('FeedbackOpinionThank')
@@ -222,7 +228,7 @@ export default {
       }
     },
     removeIcon(){
-      this.design_icon = this.$t('FeedbackDesign')
+      this.design_icon = ''
       this.popUp= this.$t('FeedbackDesignThank')
       this.showPopUp = true
       console.log(this.popUp)

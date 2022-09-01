@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col absolute inset-0 justify-center place-items-center">
-    <div class="flex flex-col bg-blue-200 w-11/12 sm:w-1/2 sm:h-1/3 xl:w-1/5 xl:h-1/5 rounded-3xl z-50">
+    <div class="flex flex-col bg-white w-11/12 sm:w-1/2 sm:h-1/3 xl:w-1/5 xl:h-1/5 rounded-3xl z-50">
       <div class ="w-4/5 h-4/5 self-center p-4">
         <p>{{popUp}}</p>
       </div>
