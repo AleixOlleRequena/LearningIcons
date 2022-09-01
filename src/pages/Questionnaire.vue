@@ -1,21 +1,23 @@
 <template>
-<div id="questionnaire" class="relative grid grid-cols-4 ">
+<div id="questionnaire" class="relative grid grid-rows-4 sm:grid sm:grid-cols-4 sm:grid-rows-1 ">
   <!-- LEFT MENU-->
-  <div class="relative flex flex-col items-center inset-y-1/2" >
-    <p class="font-montserrat text-center my-4 hover:font-bold cursor-pointer" v-for="(group, index) in groups" :key="index" v-on:click="showGroup(group)">{{group.name}}</p>
+  <div class="relative grid grid-cols-3 grid-rows-3 sm:flex sm:flex-row row-start-1 row-end-1 sm:flex sm:flex-col items-center sm:inset-y-1/2" >
+    <p class="text-sm sm:text-base font-montserrat text-center my-4 hover:font-bold cursor-pointer" v-for="(group, index) in groups" :key="index" v-on:click="showGroup(group)">{{group.name}}</p>
+    <div class=" sm:hidden absolute w-96 justify-self-center border border-solid w-screen border-black rounded mt-12"></div>
+
   </div>
   <!-- SEPARATING LINES-->
-  <div  class="absolute h-96 border border-solid left-1/4 border-black rounded mt-36"></div>
-  <div  class="absolute h-96 border border-solid left-3/4 border-black rounded mt-36"></div>
+  <div class="hidden sm:block absolute h-96 border border-solid left-1/4 border-black rounded mt-36"></div>
+  <div class="hidden sm:block absolute h-96 border border-solid left-3/4 border-black rounded mt-36"></div>
 
             <!-- CENTRAL PART ANALYTICAL PROCESSING-->
-            <div id="questionnaire_analytical" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[0].active">
+            <div id="questionnaire_analytical" class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-1 relative flex flex-col items-center mt-12 mx-4 sm:col-start-2 sm:col-end-4 " v-show="active_group[0].active">
               <!-- GROUP NAME AND EXPLANATION-->
-              <h1 class="font-montserrat  font-light md:text-3xl lg:text-4xl">{{groups[0].name}}</h1>
-              <h2 class="font-montserrat  font-light mt-4 md:text-xl lg:text-2xl">{{groups[0].description}}</h2>
+              <h1 class="font-montserrat font-light text-2xl md:text-3xl xl:text-4xl">{{groups[0].name}}</h1>
+              <h2 class="font-montserrat font-light mt-4 md:text-xl xl:text-2xl">{{groups[0].description}}</h2>
               <!-- QUESTIONNAIRE PART-->
-                <div class="relative w-full h-full grid grid-rows-2 mt-28" >
-                  <div class="flex flex-row justify-around">
+                <div class="relative w-full h-full grid grid-rows-2 mt-28 " >
+                  <div class="flex flex-row md:justify-around">
                     <div>
                       <input type="checkbox" id="descriptive processing" value="descriptive_processing" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
                       <label for="descriptive processing" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{ $t('Descriptive') }}</label>
@@ -71,10 +73,10 @@
             </div>
 
             <!-- CENTRAL PART COOKIES & CACHE-->
-            <div id="questionnaire_cookies" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[1].active">
+            <div id="questionnaire_cookies" class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-2 relative flex flex-col items-center sm:col-start-2 sm:col-end-4 mt-12 mx-4" v-show="active_group[1].active">
               <!-- GROUP NAME AND EXPLANATION-->
-              <h1 class="font-montserrat font-light md:text-3xl lg:text-4xl">{{groups[1].name}}</h1>
-              <h2 class="font-montserrat font-light mt-4 md:text-xl text-center lg:text-2xl">{{groups[1].description}}</h2>
+              <h1 class="font-montserrat font-light text-2xl md:text-3xl xl:text-4xl">{{groups[1].name}}</h1>
+              <h2 class="font-montserrat font-light mt-4 md:text-xl text-center xl:text-2xl">{{groups[1].description}}</h2>
               <!-- QUESTIONNAIRE PART-->
               <div  class="relative w-full h-full grid grid-rows-2 mt-44" >
                 <div class="flex flex-row justify-around">
@@ -107,9 +109,9 @@
             </div>
 
             <!-- CENTRAL PART DATA COLLECTION-->
-            <div id="questionnaire_data_gathering"  class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[2].active">
+            <div id="questionnaire_data_gathering"  class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-2 relative flex flex-col items-center sm:col-start-2 sm:col-end-4 mt-12 mx-4" v-show="active_group[2].active">
               <!-- GROUP NAME AND EXPLANATION-->
-              <h1 class="font-montserrat font-light md:text-3xl lg:text-4xl">{{groups[2].name}}</h1>
+              <h1 class="font-montserrat font-light text-2xl md:text-3xl xl:text-4xl">{{groups[2].name}}</h1>
               <h2 class="font-montserrat font-light mt-4 md:text-xl text-center lg:text-2xl">{{groups[2].description}}</h2>
               <!-- QUESTIONNAIRE PART-->
               <div class="relative w-full h-full grid grid-rows-2 mt-28" >
@@ -159,10 +161,10 @@
             </div>
 
             <!-- CENTRAL PART DATA TRANSFER-->
-            <div id="questionnaire_data_transfer" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[3].active">
+            <div id="questionnaire_data_transfer" class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-2 relative flex flex-col items-center sm:col-start-2 sm:col-end-4 mt-12 mx-4" v-show="active_group[3].active">
               <!-- GROUP NAME AND EXPLANATION-->
-              <h1 class="font-montserrat font-light md:text-3xl lg:text-4xl">{{groups[3].name}}</h1>
-              <h2 class="font-montserrat font-light mt-4 md:text-xl text-center lg:text-2xl">{{groups[3].description}}</h2>
+              <h1 class="font-montserrat font-light text-2xl md:text-3xl xl:text-4xl">{{groups[3].name}}</h1>
+              <h2 class="font-montserrat font-light mt-4 md:text-xl text-center xl:text-2xl">{{groups[3].description}}</h2>
               <!-- QUESTIONNAIRE PART-->
               <div  class="relative w-full h-full grid grid-rows-2 mt-44" >
                 <div class="flex flex-row lg:justify-around md:mx-5">
@@ -195,13 +197,13 @@
             </div>
 
             <!-- CENTRAL PART DATA STORAGE-->
-            <div id="questionnaire_data_storage" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 lg:mx-4" v-show="active_group[4].active">
+            <div id="questionnaire_data_storage" class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-2 relative flex flex-col items-center sm:col-start-2 sm:col-end-4 mt-12 lg:mx-4" v-show="active_group[4].active">
               <!-- GROUP NAME AND EXPLANATION-->
-              <h1 class="font-montserrat font-light md:text-3xl text-center lg:text-4xl">{{groups[4].name}}</h1>
+              <h1 class="font-montserrat font-light text-2xl md:text-3xl text-center xg:text-4xl">{{groups[4].name}}</h1>
               <h2 class="font-montserrat font-light mt-4 md:text-xl text-center lg:text-2xl">{{groups[4].description}}</h2>
               <!-- QUESTIONNAIRE PART-->
-              <div  class="relative items-center w-full h-full grid grid-rows-3 mt-24 " >
-                <div class="flex flex-row lg:justify-around md:justify-center">
+              <div  class="relative items-center w-full h-full justify-center grid grid-rows-3 mt-24 " >
+                <div class="flex flex-row  lg:justify-around md:justify-center">
                   <div>
                     <input type="checkbox" id="no_anonymized" value="no_anonymized" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
                     <label for="no_anonymized" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(0)" v-on:mouseleave="toggleTooltip(0)" >{{$t('NotAnonymized')}} </label>
@@ -227,7 +229,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="flex flex-row md:justify-center lg:justify-around my-8">
+                <div class="flex flex-row justify-around md:justify-center lg:justify-around my-8">
                   <div>
                     <input type="checkbox" id="stored_time" value="stored_time" v-model="checkedNames" class="cursor-pointer w-4 h-4 accent-blue-500">
                     <label for="stored_time" class="mx-2 font-roboto" ref="btnRef" v-on:mouseenter="toggleTooltip(2)" v-on:mouseleave="toggleTooltip(2)" >{{$t('QuestionnaireStored')}} </label>
@@ -240,7 +242,7 @@
                       </div>
                     </div>
                   </div>
-                  <select id="amounts"  v-model="times_selected.storage_time" class="md:w-12 lg:w-96 bg-gray-100 rounded border-gray-300">
+                  <select id="amounts"  v-model="times_selected.storage_time" class="md:w-12 xl:w-96 bg-gray-100 rounded border-gray-300">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -290,10 +292,10 @@
             </div>
 
             <!-- CENTRAL PART DATA PROCESSING-->
-            <div id="questionnaire_data_processing" class="relative flex flex-col items-center col-start-2 col-end-4 mt-12 mx-4" v-show="active_group[5].active">
+            <div id="questionnaire_data_processing" class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-2 relative flex flex-col items-center sm:col-start-2 sm:col-end-4 mt-12 mx-4" v-show="active_group[5].active">
               <!-- GROUP NAME AND EXPLANATION-->
-              <h1 class="font-montserrat font-light md:text-3xl lg:text-4xl">{{groups[5].name}}</h1>
-              <h2 class="font-montserrat font-light mt-4 md:text-xl text-center lg:text-2xl">{{groups[5].description}}</h2>
+              <h1 class="font-montserrat font-light text-2xl md:text-3xl xl:text-4xl">{{groups[5].name}}</h1>
+              <h2 class="font-montserrat font-light mt-4 md:text-xl text-center xl:text-2xl">{{groups[5].description}}</h2>
               <!-- QUESTIONNAIRE PART-->
               <div  class="relative w-full h-full flex flex-col mt-44" >
                 <div class="flex flex-row justify-around my-8">
@@ -309,7 +311,7 @@
                       </div>
                     </div>
                   </div>
-                  <select id="amounts1"  v-model="times_selected.processing_time" class=" md:w-12 lg:w-96 bg-gray-100 rounded border-gray-300">
+                  <select id="amounts1"  v-model="times_selected.processing_time" class=" md:w-12 xl:w-96 bg-gray-100 rounded border-gray-300">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -334,22 +336,24 @@
             </div>
 
   <!-- RIGHT PART WITH LICENSE IMAGE-->
-  <div id="result_license" class="relative flex flex-col items-center mt-12 mx-2">
-      <h1 class="font-montserrat lg:text-4xl font-light mb-20 md:text-3xl">{{$t('QuestionnaireLicense')}}</h1>
+  <div id="result_license" class=" relative flex flex-col items-center mt-28 sm:mt-12 mx-2 row-start-3 row-end-3 sm:row-start-1 row-end-2">
+    <div class=" sm:hidden absolute w-96 justify-self-center border border-solid w-screen border-black rounded -mt-6"></div>
+
+    <h1 class="font-montserrat text-center font-light mb-20 md:text-3xl lg:text-4xl">{{$t('QuestionnaireLicense')}}</h1>
       <IconImage v-on:click="openInNewTab('https://ls-leda.github.io/learning-icons/#Icons')" ref="image" v-bind:checkedNames="checkedNames" v-bind:times_selected="times_selected" class="w-full cursor-pointer"></IconImage>
 
       <div class="relative flex flex-col items-center mt-8 w-full px-2" v-if="this.imageCode">
-        <p class="font-montserrat font-bold mb-2">{{$t('QuestionnaireCopyCode')}}</p>
+        <p class="font-montserrat text-center font-bold mb-2">{{$t('QuestionnaireCopyCode')}}</p>
         <textarea id="image_code" name="image_code" v-model="this.imageCode" class="overflow-auto w-full h-32 resize-none focus:outline-blue-500 px-2" readonly></textarea>
-        <p class="font-montserrat font-bold my-2">or</p>
+        <p class="font-montserrat font-bold my-2">{{$t('DragDrop2')}}</p>
         <a download="yourLicense" :href= "this.link">
-          <button id="download" class="shadow-md bg-white rounded-xl font-montserrat  hover:bg-slate-200 lg:w-64 h-10 md:w-48 h-10 ">{{$t('QuestionnaireDownload')}}</button>
+          <button id="download" class="shadow-md bg-white rounded-xl font-montserrat  hover:bg-slate-200 md:text-sm xl:w-64 md:w-full h-10 ">{{$t('QuestionnaireDownload')}}</button>
         </a>
       </div>
     </div>
 
   <!-- BOTTOM BUTTONS TO PASS PAGES-->
-  <div id="buttons" class="absolute grid grid-rows-2 items-center col-start-2 col-end-4 w-full -bottom-60 gap-y-8">
+  <div id="buttons" class=" absolute grid grid-rows-2 items-center row-start-3 row-end-3 sm:row-start-2 row-end-2 sm:col-start-2 sm:col-end-4 w-full -bottom-60 gap-y-8">
       <div class="flex flex-row justify-around ">
         <!-- PREVIOUS BUTTON-->
         <button v-if="active_group[0].active === false" v-on:click="previousPage" class="mx-8 shadow-md bg-white rounded-xl font-montserrat w-32 h-10 text-xl hover:bg-slate-200 active:bg-slate-200">{{$t('QuestionnairePreviousButton')}}</button>
@@ -362,7 +366,7 @@
       </div>
     </div>
 </div>
-  <FooterPage class="absolute self-start bottom-0 pl-2"></FooterPage>
+  <FooterPage class="relative self-start -bottom-96 pl-2 left-0"></FooterPage>
 
 </template>
 

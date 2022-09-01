@@ -1,11 +1,11 @@
 <template>
-  <div id="dragDropArea" @dragover.prevent @drop.prevent @dragover="dragover" @dragleave="dragleave" @drop="dragFile" class="absolute z-0 w-2/5 self-center lg:mt-12 md:mt-24 top-80 flex flex-col rounded-3xl border-2 border-black border-dashed h-52 justify-center items-center">
+  <div id="dragDropArea" @dragover.prevent @drop.prevent @dragover="dragover" @dragleave="dragleave" @drop="dragFile" class=" absolute mt-28 z-0 w-11/12 self-center sm:w-2/5 lg:mt-12 md:mt-24 top-80 flex flex-col rounded-3xl border-2 border-black border-dashed h-52 justify-center items-center">
 
     <div id="dragDropMessage"  class="flex flex-col justify-center items-center" v-if="!imageData">
       <svg-icon class="justify-center"
                 type="mdi" :path="upload_file_icon"></svg-icon>
       <span class="font-bold text-center text-xl"> {{ $t('DragDrop1') }}  </span>
-      <span class="text-center text-xl"> or </span>
+      <span class="text-center text-xl"> {{ $t('DragDrop2') }} </span>
     </div>
 
     <div v-if="imageData" class="mb-8">
@@ -13,11 +13,11 @@
     </div>
 
     <input type="file" ref="input" multiple @change="previewImage" accept="image/*" class="hidden" >
-    <button @click="this.$refs.input.click()" class="flex flex-row bg-blue-400 hover:bg-blue-500 rounded-lg px-6 py-3 mx-2 font-bold">{{ $t('DragDrop2') }}</button>
+    <button @click="this.$refs.input.click()" class="flex flex-row bg-blue-400 hover:bg-blue-500 rounded-lg px-6 py-3 mx-2 font-bold">{{ $t('DragDrop3') }}</button>
     <div class="hidden" @click="this.$parent.$refs.upload.click()"></div>
   </div>
   <div class="flex flex-col mt-3 ">
-    <button v-show="imageData" @click="onUpload" class="mx-28 mt-64 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('DragDropButton') }}</button>
+    <button v-show="imageData" @click="onUpload" class="mx-28 mt-80 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('DragDropButton') }}</button>
   </div>
 </template>
 
