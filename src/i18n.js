@@ -95,7 +95,7 @@ i18next
                     QuestionnaireExplanation5: 'We use cookies to improve your navigation experience.',
                     QuestionnaireExplanation6: 'Caching allows you to efficiently reuse previously retrieved or processed data.',
                     QuestionnaireExplanation7: "Students' personal data is collected to improve their experience using the webpage.",
-                    QuestionnaireExplanation8: '',
+                    QuestionnaireExplanation8: 'Non-personal data of the students is collected, which is that not considered as personal data.',
                     QuestionnaireExplanation9: 'Metadata is data that describes and identifies other data. For example, \'Zip code\', \'Day and time\' or \'Location\' are metadata that can identify a specific person.',
                     QuestionnaireExplanation10: 'There is an external data transfer when the data collected is shared with companies not directly related to the educational institution.',
                     QuestionnaireExplanation11: 'There is an internal data transfer when the data collected is shared within the same educational institution, between people and departments, and the data can go outside of it (both local and external servers).',
@@ -112,9 +112,10 @@ i18next
                     QuestionnaireMonths: 'Months',
                     QuestionnaireYears: 'Years',
 
-                    Header1:'LEARNING ICONS',
-                    Header2:'INFORM YOUR STUDENTS',
-                    Header3:'FEEDBACK',
+                    Header1:'PROJECT',
+                    Header2:'LEARNING ICONS',
+                    Header3:'INFORM YOUR STUDENTS',
+                    Header4:'FEEDBACK',
                 }
             },
             es:{
@@ -199,7 +200,7 @@ i18next
                     QuestionnaireExplanation5: 'Utilizamos cookies para mejorar tu experiencia de navegación.',
                     QuestionnaireExplanation6: 'El almacenamiento en caché le permite reutilizar de manera eficiente los datos recuperados o procesados previamente',
                     QuestionnaireExplanation7: "Los datos personales de los estudiantes se recopilan para mejorar su experiencia en el uso de la página web.",
-                    QuestionnaireExplanation8: '',
+                    QuestionnaireExplanation8: 'Se recogen datos no personales de los alumnos, que son aquellos no considerados como datos personales.',
                     QuestionnaireExplanation9: 'Los metadatos son datos que describen e identifican otros datos. Por ejemplo, \'Código postal\', \'Día y hora\' o \'Ubicación\' son metadatos que pueden identificar a una persona específica.',
                     QuestionnaireExplanation10: 'Existe una transferencia externa de datos cuando los datos recabados son compartidos con empresas no relacionadas directamente con la institución educativa.',
                     QuestionnaireExplanation11: 'Existe una transferencia interna de datos cuando los datos recopilados se comparten dentro de una misma institución educativa, entre personas y departamentos, y los datos pueden salir fuera de ella (tanto servidores locales como externos).',
@@ -216,9 +217,10 @@ i18next
                     QuestionnaireMonths: 'Meses',
                     QuestionnaireYears: 'Años',
 
-                    Header1:'LEARNING ICONS',
-                    Header2:'INFORMA A TUS ESTUDIANTES',
-                    Header3:'DA TU OPINIÓN',
+                    Header1:'PROYECTO',
+                    Header2:'LEARNING ICONS',
+                    Header3:'INFORMA A TUS ESTUDIANTES',
+                    Header4:'DA TU OPINIÓN',
                 }
             }
         }

@@ -5,6 +5,7 @@ import FeedbackPage from "@/pages/Feedback";
 import InformPage from "@/pages/InformPage";
 import Main from "@/pages/Main";
 import Questionnaire from "@/pages/Questionnaire";
+import Project from "@/pages/Project";
 
 const routes = [
     {
@@ -30,7 +31,11 @@ const routes = [
         name: 'questionnaire',
         component: Questionnaire,
     },
-
+    {
+        path: '/project',
+        name: 'project',
+        component: Project,
+    },
 ]
 
 const router = createRouter({
