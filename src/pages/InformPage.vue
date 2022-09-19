@@ -2,12 +2,11 @@
   <section id="questionnaire_explanation" class="self-center flex flex-col mx-4 md:mx-20 pt-28">
     <h2 class="font-montserrat text-2xl self-center pb-6 text-center">{{ $t('informPage1') }}</h2>
     <div class="flex flex-col text-justify justify-center pt-20">
-      <h1 class="font-montserrat text-2xl self-center pb-10">{{ $t('informPage2') }}</h1>
       <p class="font-roboto text-xl text-center pb-24">{{ $t('informPage3') }}</p>
       <router-link to="/questionnaire">
       <button type="button"
               data-mdb-ripple="true"
-              data-mdb-ripple-color="light" class="shadow-md bg-white rounded-3xl w-full font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">QUESTIONNAIRE</button>
+              data-mdb-ripple-color="light" class="shadow-md bg-white rounded-3xl w-full font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('informPage2') }}</button>
       </router-link>
     </div>
   </section>
