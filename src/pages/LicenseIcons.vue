@@ -1,6 +1,6 @@
 <template>
   <section id="icones" >
-    <div v-for="(icon, index) in icons" :key="index" class ="flex flex-col pt-20">
+    <div v-for="(icon, index) in iconsSelected" :key="index" class ="flex flex-col pt-20">
       <div id="element" class="flex flex-row p-1.5 m-4 ">
         <img :src= "'/assets/icons/'+ icon.path + '.svg'" class="h-32 lg:h-36 xl:h-52 self-center mx-3">
         <div id="sub-element" class="flex flex-col p-1.5">
@@ -16,8 +16,13 @@
 <script>
 import FooterPage from "@/components/Footer";
 export default {
-  name: "LearningIcons",
+  name: "ProjectPage",
   components: {FooterPage},
+  data(){
+    return{
+      iconsSelected : []
+    }
+  },
   computed: {
     icons() {
       return [
@@ -93,6 +98,13 @@ export default {
         },
       ]
     }
+  },
+  mounted(){
+    for(let i = 0; i< this.$route.params.icons.length; i++){
+      let obj = this.icons.find(o => o.path === this.$route.params.icons[i])
+      this.iconsSelected.push(obj);
+    }
+
   }
 }
 </script>

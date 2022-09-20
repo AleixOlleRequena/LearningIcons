@@ -1,100 +1,34 @@
 <template>
-  <section id="icones" >
-   <div v-for="(icon, index) in icons" :key="index" class ="flex flex-col pt-20">
-     <div id="element" class="flex flex-row p-1.5 m-4 ">
-       <img :src= "'/assets/icons/'+ icon.path + '.svg'" class="h-32 lg:h-36 xl:h-52 self-center mx-3">
-       <div id="sub-element" class="flex flex-col p-1.5">
-            <h2 id="name" class="font-montserrat text-3xl font-bold">{{icon.name}}</h2>
-            <p id="description" class="font-roboto text-xl">{{ icon.description }}</p>
-       </div>
-     </div>
-   </div>
+  <section id="explicacio" class ="flex flex-col pt-20">
+    <h2 class="font-montserrat text-4xl self-center pb-6 text-center">{{ $t('LearningIcons1') }}</h2>
+    <div class="text-justify">
+      <p class="px-10 lg:px-20 xl:px-60 font-roboto self-center">{{ $t('LearningIcons2') }}</p>
+    </div>
+  </section>
+  <section id="FAQS" class ="self-center flex flex-col w-2/3 pt-10">
+    <h2 class="font-montserrat text-4xl self-center pb-6 mb-9">FAQ'S</h2>
+    <FAQS></FAQS>
   </section>
   <FooterPage class="relative self-start -bottom-36 pl-2 scrollbar-hide"></FooterPage>
 </template>
 
 <script>
+
+import FAQS from "@/components/FAQS";
 import FooterPage from "@/components/Footer";
+
 export default {
   name: "ProjectPage",
-  components: {FooterPage},
-  computed: {
-    icons() {
-      return [
-        {
-          name: this.$t('Descriptive'),
-          path: "analisis_descriptivo",
-          description: this.$t('QuestionnaireExplanation1')
-        },
-        {
-          name: this.$t('Diagnostic'),
-          path: "analisis_diagnostico",
-          description: this.$t('QuestionnaireExplanation2')
-        }, {
-          name: this.$t('Predictive'),
-          path: "analisis_predictivo",
-          description: this.$t('QuestionnaireExplanation3')
-        }, {
-          name: this.$t('Prescriptive'),
-          path: "analisis_prescriptivo",
-          description: this.$t('QuestionnaireExplanation4')
-        }, {
-          name: this.$t('Cookies'),
-          path: "cookies",
-          description: this.$t('QuestionnaireExplanation5')
-        }, {
-          name: this.$t('Cache'),
-          path: "cache",
-          description: this.$t('QuestionnaireExplanation6')
-        }, {
-          name: this.$t('Personal'),
-          path: "recoleccion_datos_personales",
-          description: this.$t('QuestionnaireExplanation7')
-        }, {
-          name: this.$t('General'),
-          path: "recoleccion_datos_no_personales",
-          description: this.$t('QuestionnaireExplanation8')
-        }, {
-          name: this.$t('Metadata'),
-          path: "metadata",
-          description: this.$t('QuestionnaireExplanation9')
-        }, {
-          name: this.$t('TransferExtern'),
-          path: "transfer_extern",
-          description: this.$t('QuestionnaireExplanation10')
-        }, {
-          name: this.$t('TransferIntern'),
-          path: "transfer_internal",
-          description: this.$t('QuestionnaireExplanation11')
-        }, {
-          name: this.$t('NotAnonymized'),
-          path: "no_anonymized",
-          description: this.$t('QuestionnaireExplanation12')
-        }, {
-          name: this.$t('Anonymized'),
-          path: "anonymized",
-          description: this.$t('QuestionnaireExplanation13')
-        }, {
-          name: this.$t('Stored'),
-          path: "stored_x_time",
-          description: this.$t('QuestionnaireExplanation16')
-        }, {
-          name: this.$t('Pseudoanonymized'),
-          path: "pseudoanonymized",
-          description: this.$t('QuestionnaireExplanation14')
-        }, {
-          name: this.$t('Encrypted'),
-          path: "encrypted",
-          description: this.$t('QuestionnaireExplanation15')
-        }, {
-          name: this.$t('Processed'),
-          path: "processed_x_time",
-          description: this.$t('QuestionnaireExplanation17')
-        },
-      ]
-    }
+  components:{
+    FAQS,
+    FooterPage
+  },
+  mounted() {
+  },
+  beforeUnmount () {
   }
 }
+
 </script>
 
 <style scoped>

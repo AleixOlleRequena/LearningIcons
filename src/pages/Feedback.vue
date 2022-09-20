@@ -137,38 +137,38 @@ export default {
       return [
         {
           name: this.$t('Descriptive'),
-          path:"analisis_descriptivo"
+          path:"descriptive_processing"
         },
         {
           name: this.$t('Diagnostic'),
-          path:"analisis_diagnostico"
+          path:"diagnostic_processing"
         },{
       name: this.$t('Predictive'),
-          path:"analisis_predictivo"
+          path:"predictive_processing"
     },{
       name: this.$t('Prescriptive'),
-          path:"analisis_prescriptivo"
+          path:"prescriptive_processing"
     },{
       name: this.$t('Cookies'),
           path:"cookies"
     },{
       name: this.$t('Cache') ,
-          path:"cache"
+          path:"local_cache"
     },{
       name: this.$t('Personal'),
-          path:"recoleccion_datos_personales"
+          path:"personal_data"
     },{
       name: this.$t('General'),
-          path:"recoleccion_datos_no_personales"
+          path:"general_data"
     },{
       name: this.$t('Metadata'),
           path:"metadata"
     },{
       name: this.$t('TransferExtern'),
-          path:"transfer_extern"
+          path:"third_party"
     },{
       name: this.$t('TransferIntern'),
-          path:"transfer_internal"
+          path:"intern_transfer"
     },{
       name: this.$t('NotAnonymized'),
           path:"no_anonymized"
@@ -177,7 +177,7 @@ export default {
           path:"anonymized"
     },{
       name: this.$t('Stored'),
-          path:"stored_x_time"
+          path:"stored_time"
     },{
       name: this.$t('Pseudoanonymized'),
           path:"pseudoanonymized"
@@ -186,7 +186,7 @@ export default {
           path:"encrypted"
     },{
       name: this.$t('Processed'),
-          path:"processed_x_time"
+          path:"processed_time"
     },
 ]
     }

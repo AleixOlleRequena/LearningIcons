@@ -485,7 +485,9 @@ export default {
       this.link = URL.createObjectURL(svgBlob);
     },
     openInNewTab(page){
-      window.open(page);
+      this.$router.push({ name: 'licenseIcons', params: { icons: this.checkedNames} })
+      //window.open(page);
+      console.log(page)
     },
     toggleTooltip: function(i){
       if(this.tooltipShow[i]){
