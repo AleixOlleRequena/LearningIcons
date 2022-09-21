@@ -103,6 +103,7 @@ export default {
     for(let i = 0; i< this.$route.params.icons.length; i++){
       let obj = this.icons.find(o => o.path === this.$route.params.icons[i])
       this.iconsSelected.push(obj);
+      console.log(this.iconsSelected)
     }
 
   }

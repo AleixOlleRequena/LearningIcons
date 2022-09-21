@@ -116,6 +116,7 @@ i18next
                     Header2:'LEARNING ICONS',
                     Header3:'INFORM YOUR STUDENTS',
                     Header4:'FEEDBACK',
+                    JSON:'Download JSON!'
                 }
             },
             es:{
@@ -221,6 +222,7 @@ i18next
                     Header2:'LEARNING ICONS',
                     Header3:'INFORMA A TUS ESTUDIANTES',
                     Header4:'DA TU OPINIÓN',
+                    JSON:'Descarga el JSON!'
                 }
             }
         }
