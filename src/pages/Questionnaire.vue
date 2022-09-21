@@ -242,7 +242,7 @@
                       </div>
                     </div>
                   </div>
-                  <select id="amounts"  v-model="times_selected.storage_time" class="md:w-12 xl:w-96 bg-gray-100 rounded border-gray-300">
+                  <select id="amounts"  v-model="times_selected.storage_time" class="md:w-12 xl:w-24 bg-gray-100 rounded border-gray-300">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
