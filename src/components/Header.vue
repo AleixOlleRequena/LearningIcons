@@ -2,7 +2,7 @@
   <div id="header" class="grid grid-cols-3 lg:gap-4 w-100 h-20">
     <div id = "logo" class="self-center lg:w-46 mx-2 xl:w-96 ">
       <router-link to="/LearningIcons">
-      <img src="LearningIcons/assets/learningiconslogo.svg" alt="Learning Icons Logo" >
+      <img src="assets/learningiconslogo.svg" alt="Learning Icons Logo" >
       </router-link>
     </div>
     <div id ="menu" class="col-span-2 grid grid-cols-4 items-center font-roboto lg:font-bold lg:text-xl">
