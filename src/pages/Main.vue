@@ -33,7 +33,7 @@ export default {
   name: "MainPage",
   data() {
     return {
-      path : "LearningIcons/assets/IconsImage.svg",
+      path : "assets/IconsImage.svg",
       name : "LEARNING ICONS",
       route:"/learningIcon",
       timer : null
