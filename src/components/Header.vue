@@ -1,7 +1,7 @@
 <template>
   <div id="header" class="grid grid-cols-3 lg:gap-4 w-100 h-20">
     <div id = "logo" class="self-center lg:w-46 mx-2 xl:w-96 ">
-      <router-link to="/">
+      <router-link to="/home">
       <img src="LearningIcons/assets/learning_icons_logo.svg" alt="Learning Icons Logo" >
       </router-link>
     </div>
