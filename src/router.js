@@ -23,7 +23,7 @@ const routes = [
         component: InformPage,
     },
     {
-        path: '/home',
+        path: '/',
         name: 'home',
         component: Main,
     },
