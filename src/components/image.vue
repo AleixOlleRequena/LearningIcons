@@ -309,74 +309,7 @@
 <script>
 export default {
   name: "IconImage",
-  props:['checkedNames', 'times_selected'],
-  data(){
-    return{
-      pseudoanonimizados: {
-        display: ""
-      },
-      datos_no_personales: {
-        display: ""
-      },
-      transfer_externa: {
-        display: ""
-      },
-      tratamiento_datos: {
-        display: ""
-      },
-      datos_personales: {
-        display: ""
-      },
-      transfer_interna: {
-        display: ""
-      },
-      encriptados: {
-        display: ""
-      },
-      no_anonimizados: {
-        display: ""
-      },
-      metadata: {
-        display: ""
-      },
-      almacenamiento: {
-        display: ""
-      },
-      cache: {
-        display: ""
-      },
-      anonimizados: {
-        display: ""
-      },
-      prescriptivo: {
-        display: ""
-      },
-      predictivo: {
-        display: ""
-      },
-      diagnostico: {
-        display: ""
-      },
-      descriptivo: {
-        display: ""
-      },
-      cookies: {
-        display: ""
-      }
-    }
-  },
-  methods: {
-    changeNoPersonales: function () {
-      console.log("POJFPEADOJ")
-      if (this.datos_no_personales.display === "none") {
-        this.datos_no_personales.display = "";
-      } else {
-        this.datos_no_personales.display = "none";
-      }
-
-
-    }
-  }
+  props:['checkedNames', 'times_selected']
 }
 
 </script>

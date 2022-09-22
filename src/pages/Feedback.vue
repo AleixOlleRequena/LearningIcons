@@ -229,10 +229,9 @@ export default {
     },
     removeIcon(){
       this.design_icon = ''
+      // Prepare and show pop up thanking the user
       this.popUp= this.$t('FeedbackDesignThank')
       this.showPopUp = true
-      console.log(this.popUp)
-
     }
   }
 }
