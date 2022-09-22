@@ -1,5 +1,5 @@
 <template>
-  <section id="questionnaire_explanation" class="self-center flex flex-col mx-4 md:mx-20 pt-28">
+  <section id="questionnaire_explanation" class="self-center flex flex-col mx-8 md:mx-20 pt-28">
     <h2 class="font-montserrat text-2xl self-center pb-6 text-center">{{ $t('informPage1') }}</h2>
     <div class="flex flex-col text-justify justify-center pt-20">
       <p class="font-roboto text-xl text-center pb-24">{{ $t('informPage3') }}</p>
@@ -10,7 +10,7 @@
       </router-link>
     </div>
   </section>
-  <FooterPage class="relative self-start -bottom-44 pl-2 left-0 xl:-bottom-56"></FooterPage>
+  <FooterPage class="relative self-start -bottom-44 pl-2 left-0 xl:absolute xl:bottom-0"></FooterPage>
 
 </template>
 

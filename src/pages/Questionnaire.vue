@@ -11,7 +11,7 @@
   <div class="hidden sm:block absolute h-96 border border-solid left-3/4 border-black rounded mt-36"></div>
 
             <!-- CENTRAL PART ANALYTICAL PROCESSING-->
-            <div id="questionnaire_analytical" class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-1 relative flex flex-col items-center mt-12 mx-4 sm:col-start-2 sm:col-end-4 " v-show="active_group[0].active">
+            <div id="questionnaire_analytical" class="-mt-12 sm:mt-12 row-start-2 row-end-2 sm:row-start-1 row-end-2 relative flex flex-col items-center mt-12 mx-4 sm:col-start-2 sm:col-end-4 " v-show="active_group[0].active">
               <!-- GROUP NAME AND EXPLANATION-->
               <h1 class="font-montserrat font-light text-2xl md:text-3xl xl:text-4xl">{{groups[0].name}}</h1>
               <h2 class="font-montserrat font-light mt-4 md:text-xl xl:text-2xl">{{groups[0].description}}</h2>
@@ -242,7 +242,7 @@
                       </div>
                     </div>
                   </div>
-                  <select id="amounts"  v-model="times_selected.storage_time" class="md:w-12 xl:w-96 bg-gray-100 rounded border-gray-300">
+                  <select id="amounts"  v-model="times_selected.storage_time" class="md:w-12 xl:w-24 bg-gray-100 rounded border-gray-300">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -485,7 +485,9 @@ export default {
       this.link = URL.createObjectURL(svgBlob);
     },
     openInNewTab(page){
-      window.open(page);
+      this.$router.push({ name: 'licenseIcons', params: { icons: this.checkedNames} })
+      //window.open(page);
+      console.log(page)
     },
     toggleTooltip: function(i){
       if(this.tooltipShow[i]){

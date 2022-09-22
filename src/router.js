@@ -5,6 +5,8 @@ import FeedbackPage from "@/pages/Feedback";
 import InformPage from "@/pages/InformPage";
 import Main from "@/pages/Main";
 import Questionnaire from "@/pages/Questionnaire";
+import Project from "@/pages/Project";
+import LicenseIcons from "@/pages/LicenseIcons";
 
 const routes = [
     {
@@ -30,12 +32,22 @@ const routes = [
         name: 'questionnaire',
         component: Questionnaire,
     },
+    {
+        path: '/project',
+        name: 'project',
+        component: Project,
+    },
+    {
+        path: '/licenseicons/:icons*',
+        name: 'licenseIcons',
+        component: LicenseIcons,
+    }
 
 ]
 
 const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes
 });
 
 export default router;

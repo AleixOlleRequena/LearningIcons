@@ -152,23 +152,23 @@
       </g>
       <g id="almacenamiento" v-if="checkedNames.indexOf('stored_time') !== -1">
         <g>
-          <text id="storage_period" transform="translate(30.84 24.11) scale(0.93 1)" style="isolation: isolate;font-size: 3.322453260421753px;fill: #202020;font-family: Calibri-Bold, Calibri;font-weight: 700">
+          <text id="storage_period" transform="translate(32.84 25.54) scale(1 1)" style="isolation: isolate;font-size: 3.322453260421753px;fill: #202020;font-family: Calibri-Bold, Calibri;font-weight: 700">
             {{times_selected.storage_period[0]}}</text>
-          <text id="storage_time" transform="translate(28.84 24.11) scale(0.93 1)" style="isolation: isolate;font-size: 3.322453260421753px;fill: #202020;font-family: Calibri-Bold, Calibri;font-weight: 700">
+          <text id="storage_time" transform="translate(30.84 25.54) scale(1 1)" style="isolation: isolate;font-size: 3.322453260421753px;fill: #202020;font-family: Calibri-Bold, Calibri;font-weight: 700">
             {{times_selected.storage_time}}</text>
-          <ellipse cx="33.06" cy="15.26" rx="3" ry="0.95" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
-          <polyline points="30.06 15.26 30.06 19.88 30.06 20.16" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
-          <polyline points="36.05 15.26 36.05 20.64 36.05 20.96" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
-          <path d="M31.26,18.88s-.25.66,2.32.84a10.51,10.51,0,0,0,1.86,0c.78-.09,1.67-.31,1.83-.8" transform="translate(-1.2 -2.07)" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
-          <ellipse cx="33.07" cy="19.82" rx="6.1" ry="6.31" style="fill: none;stroke: #010101;stroke-miterlimit: 10;stroke-width: 0.35000000000000003px"/>
-          <path d="M31.26,22.12s-.25.66,2.31.84a9.62,9.62,0,0,0,1.86,0c.78-.09,1.68-.3,1.83-.8" transform="translate(-1.2 -2.07)" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
-          <path d="M37.71,24.5c.07-1.51-.13-2.92-1.69-3" transform="translate(-1.2 -2.07)" style="fill: none;stroke: #171717;stroke-miterlimit: 10;stroke-width: 0.1px"/>
-          <polygon points="36.32 22.23 36.73 22.23 36.52 22.62 36.32 22.23" style="fill: #1e1e1e"/>
-          <ellipse cx="34.8" cy="21.06" rx="1.54" ry="1.59" style="fill: #fff;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
-          <rect x="34.77" y="19.72" width="0.17" height="1.36" rx="0.07" style="fill: #1d1d1d"/>
-          <path d="M36.08,23l0,0a.09.09,0,0,1,0,.11l-.47.71a.09.09,0,0,1-.11,0l0,0a.08.08,0,0,1,0-.12L36,23A.07.07,0,0,1,36.08,23Z" transform="translate(-1.2 -2.07)" style="fill: #1d1d1d"/>
-          <ellipse cx="34.86" cy="21" rx="0.21" ry="0.22" style="fill: #1d1d1d"/>
-          <path d="M31.26,20.46s-.26.66,2.31.84a10.51,10.51,0,0,0,1.86,0c.78-.09,1.68-.31,1.83-.8" transform="translate(-1.2 -2.07)" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
+          <ellipse cx="34.69" cy="17.61" rx="3" ry="0.93" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
+          <polyline points="31.69 17.61 31.69 22.11 31.69 22.38" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
+          <polyline points="37.68 17.61 37.68 22.85 37.68 23.17" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
+          <path d="M31.26,19.23s-.25.64,2.32.82a10.51,10.51,0,0,0,1.86,0c.78-.09,1.67-.3,1.83-.78" transform="translate(0.43 -0.11)" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
+          <ellipse cx="34.7" cy="21.08" rx="6.1" ry="6.15" style="fill: none;stroke: #010101;stroke-miterlimit: 10;stroke-width: 0.35000000000000003px"/>
+          <path d="M31.26,22.39s-.25.64,2.31.82a10.49,10.49,0,0,0,1.86,0c.78-.09,1.68-.3,1.83-.78" transform="translate(0.43 -0.11)" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
+          <path d="M37.71,24.7c.07-1.47-.13-2.84-1.69-2.94" transform="translate(0.43 -0.11)" style="fill: none;stroke: #171717;stroke-miterlimit: 10;stroke-width: 0.1px"/>
+          <polygon points="37.95 24.4 38.36 24.4 38.16 24.78 37.95 24.4" style="fill: #1e1e1e"/>
+          <ellipse cx="36.43" cy="23.26" rx="1.54" ry="1.55" style="fill: #fff;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
+          <rect x="36.4" y="21.96" width="0.17" height="1.33" rx="0.07" style="fill: #1d1d1d"/>
+          <path d="M36.08,23.23l0,0a.09.09,0,0,1,0,.11l-.47.69a.07.07,0,0,1-.11,0l0,0a.07.07,0,0,1,0-.11l.47-.69A.09.09,0,0,1,36.08,23.23Z" transform="translate(0.43 -0.11)" style="fill: #1d1d1d"/>
+          <circle cx="36.49" cy="23.2" r="0.21" style="fill: #1d1d1d"/>
+          <path d="M31.26,20.77s-.26.64,2.31.82a10.51,10.51,0,0,0,1.86,0c.78-.09,1.68-.3,1.83-.78" transform="translate(0.43 -0.11)" style="fill: none;stroke: #1d1d1d;stroke-miterlimit: 10;stroke-width: 0.2px"/>
         </g>
       </g>
       <g id="cache" v-if="checkedNames.indexOf('local_cache') !== -1">

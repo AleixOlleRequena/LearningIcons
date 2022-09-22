@@ -19,7 +19,7 @@ i18next
                     informPage3: 'Answering this questionnaire, you will be able to decide which license best fits your necessities.',
 
                     Main1: 'WHAT IS LEARNING ICONS',
-                    Main2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum in lorem nec euismod. Nunc porttitor porta imperdiet. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.',
+                    Main2: 'The Learning Icons project wants to help educational institutions in the difficult task of informing their students in a clear and legible way, about the use that these institutions give to the data of each student. The use of icons can fulfill this function. The icons can inform about how data is treated in education using Learning Analytics and, therefore, raise awareness among students by facilitating access to this type of information.',
                     Main3: 'COLLABORATORS',
 
                     Feedback1: 'HELP US TO KEEP IMPROVING',
@@ -56,15 +56,15 @@ i18next
                     DragDropImages2: " images",
 
                     LearningIcons1: 'WHAT IS LEARNING ICONS',
-                    LearningIcons2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum in lorem nec euismod. Nunc porttitor porta imperdiet. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices. Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.Donec id lacus sed ipsum pulvinar venenatis non eu purus. Sed facilisis pulvinar risus non efficitur. Vestibulum iaculis tortor vel leo efficitur, at tempus arcu ultrices.',
+                    LearningIcons2: 'The Learning Analytics approach adopted in education implies the gathering and processing of sensitive information and the generation of profiles of students, which may have direct or indirect dire consequences for the students. The Educational institutions must manage this data processing according to the General Data Protection Regulation, respecting its principles of fairness when it comes to information gathering and processing. This implies that the students must be well informed and give explicit consent before their information is gathered and processed. The GDPR propose the usage of recognizable standardized icons to facilitate a general understanding and awareness of how personal data is deemed to be processed in each application context.',
                     FAQSQuestion1:  '¿What is Learning Icons for?',
-                    FAQSAnswer1: 'Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth',
+                    FAQSAnswer1: 'The Learning Icons project has been created to ensure that students get all the information about what the educational institutions do with their data in a visual and understandable way.',
                     FAQSQuestion2: '¿How does it work?',
-                    FAQSAnswer2: 'Venus takes 224.7 Earth days to complete one orbit around the Sun.',
+                    FAQSAnswer2: 'If you go to "INFORM YOUR STUDENTS" page, you will be able to create a license containing the icons that better communicate students what your institution do with their data.',
                     FAQSQuestion3: '¿Can I use it on my web?',
-                    FAQSAnswer3: 'Binturongs smell like popcorn.',
+                    FAQSAnswer3: 'Yes, everyone is free to use our service in their own website. Although it is meant to be used in educational sites.',
                     FAQSQuestion4: '¿Do I have to pay for it?',
-                    FAQSAnswer4: 'Binturongs smell like popcorn.',
+                    FAQSAnswer4: 'No, this service is completely free to use.',
                     PopUpExit: 'EXIT',
 
 
@@ -95,7 +95,7 @@ i18next
                     QuestionnaireExplanation5: 'We use cookies to improve your navigation experience.',
                     QuestionnaireExplanation6: 'Caching allows you to efficiently reuse previously retrieved or processed data.',
                     QuestionnaireExplanation7: "Students' personal data is collected to improve their experience using the webpage.",
-                    QuestionnaireExplanation8: '',
+                    QuestionnaireExplanation8: 'Non-personal data of the students is collected, which is that not considered as personal data.',
                     QuestionnaireExplanation9: 'Metadata is data that describes and identifies other data. For example, \'Zip code\', \'Day and time\' or \'Location\' are metadata that can identify a specific person.',
                     QuestionnaireExplanation10: 'There is an external data transfer when the data collected is shared with companies not directly related to the educational institution.',
                     QuestionnaireExplanation11: 'There is an internal data transfer when the data collected is shared within the same educational institution, between people and departments, and the data can go outside of it (both local and external servers).',
@@ -112,9 +112,11 @@ i18next
                     QuestionnaireMonths: 'Months',
                     QuestionnaireYears: 'Years',
 
-                    Header1:'LEARNING ICONS',
-                    Header2:'INFORM YOUR STUDENTS',
-                    Header3:'FEEDBACK',
+                    Header1:'PROJECT',
+                    Header2:'LEARNING ICONS',
+                    Header3:'INFORM YOUR STUDENTS',
+                    Header4:'FEEDBACK',
+                    JSON:'Download JSON!'
                 }
             },
             es:{
@@ -163,13 +165,13 @@ i18next
                     LearningIcons1: 'QUE ES LEARNING ICONS',
                     LearningIcons2: 'El enfoque de Learning Analytics adoptado en la educación implica la recogida y el tratamiento de información sensible y la generación de perfiles de alumnos, que pueden tener consecuencias nefastas tanto de forma directa como indirecta para los estudiantes. Los centros educativos deben gestionar este tratamiento de datos de acuerdo con el RGPD, respetando sus principios dequitado en cuanto a la recogida y tratamiento de la información. Esto implica que los estudiantes deben estar bien informados y dar su consentimiento explícito antes de poder recopilar y procesar su información. El RGPD propone el uso de iconos reconocibles y estandarizados para facilitar la comprensión y la conciencia de cómo se traten los datos personales en cada contexto.',
                     FAQSQuestion1:  '¿Para qué sirve Learning Icons?',
-                    FAQSAnswer1: 'Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth Given a 24-hour day and 360 degrees of longitude around the Earth',
+                    FAQSAnswer1: 'El proyecto Learning Icons se ha creado para que los estudiantes reciban de forma visual y entendible toda la información sobre qué uso hacen las instituciones educativas de sus datos.',
                     FAQSQuestion2: '¿Cómo funciona?',
-                    FAQSAnswer2: 'Venus takes 224.7 Earth days to complete one orbit around the Sun.',
-                    FAQSQuestion3: '¿CPuedo utilizarlo en mi web?',
-                    FAQSAnswer3: 'Binturongs smell like popcorn.',
+                    FAQSAnswer2: 'Si te diriges a la página "INFORMA A TUS ESTUDIANTES", podrás crear una licencia con los iconos que mejor transmitan a los alumnos el uso que hace tu institución de sus datos.',
+                    FAQSQuestion3: '¿Puedo utilizarlo en mi web?',
+                    FAQSAnswer3: 'Si, todo el mundo es libre de utilizar nuestro servicio en su página web. Aunque se ha de tener en cuenta que se ha diseñado especificamente para su uso en instituciones educativas.',
                     FAQSQuestion4: '¿Tengo que pagar para utilizarlo?',
-                    FAQSAnswer4: 'Binturongs smell like popcorn.',
+                    FAQSAnswer4: 'No, el servicio es totalmente gratuito.',
                     PopUpExit: 'SALIR',
 
                     QuestionnaireStored: 'Datos almacenados durante ',
@@ -199,7 +201,7 @@ i18next
                     QuestionnaireExplanation5: 'Utilizamos cookies para mejorar tu experiencia de navegación.',
                     QuestionnaireExplanation6: 'El almacenamiento en caché le permite reutilizar de manera eficiente los datos recuperados o procesados previamente',
                     QuestionnaireExplanation7: "Los datos personales de los estudiantes se recopilan para mejorar su experiencia en el uso de la página web.",
-                    QuestionnaireExplanation8: '',
+                    QuestionnaireExplanation8: 'Se recogen datos no personales de los alumnos, que son aquellos no considerados como datos personales.',
                     QuestionnaireExplanation9: 'Los metadatos son datos que describen e identifican otros datos. Por ejemplo, \'Código postal\', \'Día y hora\' o \'Ubicación\' son metadatos que pueden identificar a una persona específica.',
                     QuestionnaireExplanation10: 'Existe una transferencia externa de datos cuando los datos recabados son compartidos con empresas no relacionadas directamente con la institución educativa.',
                     QuestionnaireExplanation11: 'Existe una transferencia interna de datos cuando los datos recopilados se comparten dentro de una misma institución educativa, entre personas y departamentos, y los datos pueden salir fuera de ella (tanto servidores locales como externos).',
@@ -216,9 +218,11 @@ i18next
                     QuestionnaireMonths: 'Meses',
                     QuestionnaireYears: 'Años',
 
-                    Header1:'LEARNING ICONS',
-                    Header2:'INFORMA A TUS ESTUDIANTES',
-                    Header3:'DA TU OPINIÓN',
+                    Header1:'PROYECTO',
+                    Header2:'LEARNING ICONS',
+                    Header3:'INFORMA A TUS ESTUDIANTES',
+                    Header4:'DA TU OPINIÓN',
+                    JSON:'Descarga el JSON!'
                 }
             }
         }
