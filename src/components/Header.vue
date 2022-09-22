@@ -10,7 +10,7 @@
         <router-link to="/project">{{$t('Header1')}}</router-link>
       </div>
       <div id ="learning" class="-rotate-45 md:rotate-0 text-xs min-w-min justify-self-center transition ease-in-out hover:scale-110 duration-150 md:text-xl">
-        <router-link to="/learningIcons">{{$t('Header2')}}</router-link>
+        <router-link to="/learningIcon">{{$t('Header2')}}</router-link>
       </div>
       <div id ="inform" class="-rotate-45 md:rotate-0 md:text-center  text-xs transition ease-in-out hover:scale-110 duration-150 md:text-xl">
         <router-link to="/informYourStudents">{{$t('Header3')}}</router-link>

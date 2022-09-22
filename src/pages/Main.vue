@@ -33,9 +33,9 @@ export default {
   name: "MainPage",
   data() {
     return {
-      path : "/assets/IconsImage.svg",
+      path : "LearningIcons/assets/IconsImage.svg",
       name : "LEARNING ICONS",
-      route:"/learningIcons",
+      route:"/learningIcon",
       timer : null
     }
   },
@@ -46,13 +46,13 @@ export default {
     changeImg(){
       this.timer = setInterval(() => {
         if(this.name === "LEARNING ICONS"){
-          this.path = "/assets/imatge.svg"
+          this.path = "LearningIcons/assets/imatge.svg"
           this.name = "GIVE YOUR OPINION"
           this.route = "/feedback"
         }else{
-          this.path = "/assets/IconsImage.svg"
+          this.path = "LearningIcons/assets/IconsImage.svg"
           this.name = "LEARNING ICONS"
-          this.route = "/learningIcons"
+          this.route = "/learningIcon"
         }
       }, 5000)
     },
