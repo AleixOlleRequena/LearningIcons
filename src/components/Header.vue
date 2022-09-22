@@ -6,16 +6,16 @@
       </router-link>
     </div>
     <div id ="menu" class="col-span-2 grid grid-cols-4 items-center font-roboto lg:font-bold lg:text-xl">
-      <div id ="project" class=" text-xs min-w-min justify-self-center transition ease-in-out hover:scale-110 duration-150 md:text-xl">
+      <div id ="project" class="-rotate-45 md:rotate-0 text-xs min-w-min justify-self-center transition ease-in-out hover:scale-110 duration-150 md:text-xl">
         <router-link to="/project">{{$t('Header1')}}</router-link>
       </div>
-      <div id ="learning" class=" text-xs min-w-min justify-self-center transition ease-in-out hover:scale-110 duration-150 md:text-xl">
+      <div id ="learning" class="-rotate-45 md:rotate-0 text-xs min-w-min justify-self-center transition ease-in-out hover:scale-110 duration-150 md:text-xl">
         <router-link to="/learningIcons">{{$t('Header2')}}</router-link>
       </div>
-      <div id ="inform" class="md:text-center  text-xs transition ease-in-out hover:scale-110 duration-150 md:text-xl">
+      <div id ="inform" class="-rotate-45 md:rotate-0 md:text-center  text-xs transition ease-in-out hover:scale-110 duration-150 md:text-xl">
         <router-link to="/informYourStudents">{{$t('Header3')}}</router-link>
       </div>
-      <div id ="feedback" class=" md:text-center text-xs transition ease-in-out hover:scale-110 duration-150 md:text-xl">
+      <div id ="feedback" class="-rotate-45 md:rotate-0 md:text-center text-xs transition ease-in-out hover:scale-110 duration-150 md:text-xl">
         <router-link to="/feedback">{{$t('Header4')}}</router-link>
       </div>
     </div>

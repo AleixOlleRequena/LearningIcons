@@ -1,13 +1,13 @@
 <template>
   <section id="icones" >
-    <div v-for="(group, index) in icons" :key="index" class ="flex flex-col pt-20 ml-12">
-      <h1 class="font-montserrat text-4xl font-bold">{{group.category}}</h1>
+    <div v-for="(group, index) in icons" :key="index" class ="flex flex-col pt-20 md:ml-12">
+      <h1 class="font-montserrat text-2xl md:text-4xl font-bold">{{group.category}}</h1>
       <div v-for="(icon, index) in group.icon" :key="index" class ="flex flex-col pt-20">
-        <div id="element" class="flex flex-row p-1.5 m-4 ">
-          <img :src= "'/assets/icons/'+ icon.path + '.svg'" class="h-32 lg:h-36 xl:h-52 self-center mx-3">
-          <div id="sub-element" class="flex flex-col p-1.5">
-            <h2 id="name" class="font-montserrat text-3xl font-semibold">{{icon.name}}</h2>
-            <p id="description" class="font-roboto text-xl">{{ icon.description }}</p>
+        <div id="element" class="flex flex-row md:p-1.5 md:m-4 ">
+          <img :src= "'/assets/icons/'+ icon.path + '.svg'" class="h-24 lg:h-36 xl:h-52 self-center mx-3">
+          <div id="sub-element" class="flex flex-col md:p-1.5">
+            <h2 id="name" class="font-montserrat text-xl md:text-3xl font-semibold">{{icon.name}}</h2>
+            <p id="description" class="font-roboto md:text-xl">{{ icon.description }}</p>
           </div>
         </div>
       </div>
