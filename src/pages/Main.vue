@@ -61,6 +61,9 @@ export default {
     }
   },
   mounted() {
+    this.path = "LearningIcons/assets/IconsImage.svg"
+    this.name = "LEARNING ICONS"
+    this.route = "/learningIcon"
     this.changeImg();
   },
   beforeUnmount () {
