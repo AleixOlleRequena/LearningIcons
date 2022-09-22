@@ -10,7 +10,7 @@ import LicenseIcons from "@/pages/LicenseIcons";
 
 const routes = [
     {
-        path: '/learningIcon',
+        path: '/Icons',
         name:'learning Icons',
         component: LearningIcons },
     {
@@ -23,7 +23,7 @@ const routes = [
         component: InformPage,
     },
     {
-        path: '/',
+        path: '/LearningIcons',
         name: 'home',
         component: Main,
     },
