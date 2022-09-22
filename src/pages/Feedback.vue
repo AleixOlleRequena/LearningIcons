@@ -197,7 +197,7 @@ export default {
     },
     changeOpinionIcon(icon){
       this.opinion_icon = icon.name;
-      this.path = "/assets/icons/" + icon.path + ".svg";
+      this.path = "LearningIcons/assets/icons/" + icon.path + ".svg";
     },
     changeDesignIcon(icon){
       this.design_icon = icon.name;
