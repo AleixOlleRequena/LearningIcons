@@ -242,7 +242,7 @@
                       </div>
                     </div>
                   </div>
-                  <select id="amounts"  v-model="times_selected.storage_time" class="md:w-12 xl:w-24 bg-gray-100 rounded border-gray-300">
+                  <select id="amounts"  aria-label="amount of time to select" v-model="times_selected.storage_time" class="md:w-12 xl:w-24 bg-gray-100 rounded border-gray-300">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -253,7 +253,7 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                   </select>
-                  <select id="periods" v-model="times_selected.storage_period" class="bg-gray-100 rounded border-gray-300">
+                  <select id="periods" aria-label="period of time to select" v-model="times_selected.storage_period" class="bg-gray-100 rounded border-gray-300">
                     <option value="Seconds">{{$t('QuestionnaireSeconds')}}</option>
                     <option value="minutes">{{$t('QuestionnaireMinutes')}}</option>
                     <option value="Hours">{{$t('QuestionnaireHours')}}</option>
@@ -311,7 +311,7 @@
                       </div>
                     </div>
                   </div>
-                  <select id="amounts1"  v-model="times_selected.processing_time" class=" md:w-12 xl:w-96 bg-gray-100 rounded border-gray-300">
+                  <select id="amounts1"  aria-label="amount of time to select" v-model="times_selected.processing_time" class=" md:w-12 xl:w-96 bg-gray-100 rounded border-gray-300">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -322,7 +322,7 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                   </select>
-                  <select id="periods1" v-model="times_selected.processing_period" class="bg-gray-100 rounded border-gray-300">
+                  <select id="periods1" aria-label="period of time to select" v-model="times_selected.processing_period" class="bg-gray-100 rounded border-gray-300">
                     <option value="Seconds">{{$t('QuestionnaireSeconds')}}</option>
                     <option value="minutes">{{$t('QuestionnaireMinutes')}}</option>
                     <option value="Hours">{{$t('QuestionnaireHours')}}</option>

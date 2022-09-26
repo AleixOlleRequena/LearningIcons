@@ -7,7 +7,7 @@
       <section id="opinion" class=" hidden sm:flex row-start-2 row-end-2 flex flex-col sm:mt-0 sm:row-start-1">
          <p class="font-roboto text-xl text-center md:mx-2 md:pb-16 lg:pb-9 xl:pb-12">{{ $t('Feedback2') }}</p>
         <!--DropDown menu opinion-->
-        <button @click="isShowOpinion = !isShowOpinion" class=" md:text-sm lg:text-base flex flex-row items-center justify-between shadow-md bg-white rounded-xl font-montserrat h-8 lg:mx-24 mt-8 md:-mt-2 w-4/5 self-center hover:bg-slate-50 active:bg-slate-200">
+        <button aria-label="dropdown menu button" @click="isShowOpinion = !isShowOpinion" class=" md:text-sm lg:text-base flex flex-row items-center justify-between shadow-md bg-white rounded-xl font-montserrat h-8 lg:mx-24 mt-8 md:-mt-2 w-4/5 self-center hover:bg-slate-50 active:bg-slate-200">
           {{opinion_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
@@ -19,11 +19,11 @@
 
         <!--image and opinion-->
         <div v-if="path"  class="mt-36 absolute z-0 flex flex-col w-96 self-center sm:mt-12 sm:top-80">
-          <img :src="path" class="h-32 lg:h-36 xl:h-52 self-center mb-3">
+          <img :alt= "alt" :src="path" class="h-32 lg:h-36 xl:h-52 self-center mb-3">
           <div class=" md:mx-10 lg:mx-2 xl:-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
             <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative  h-full font-roboto w-10/12 xl:w-11/12 md:w-60 lg:w-80 focus:outline-0" ></textarea>
           </div>
-          <button v-show="message" @click="sendOpinion" class="self-center w-36 mt-12 md:w-36 md:mt-4 lg:w-2/3 lg:mt-16 xl:mx-28  shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
+          <button aria-label="Send opinion button" v-show="message" @click="sendOpinion" class="self-center w-36 mt-12 md:w-36 md:mt-4 lg:w-2/3 lg:mt-16 xl:mx-28  shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
         </div>
       </section>
       <!-- SEPARATION LINE-->
@@ -33,7 +33,7 @@
         <p class="font-roboto text-xl text-center pb-9 lg:pb-7 mx-5">{{ $t('Feedback3') }}</p>
 
         <!--DropDown menu design-->
-        <button @click="isShowDesign = !isShowDesign" class="w-11/12 flex flex-row items-center justify-between self-center shadow-md bg-white rounded-xl font-montserrat h-8 md:text-sm lg:text-base md:w-4/5  lg:mx-28 hover:bg-slate-50 active:bg-slate-200">
+        <button aria-label="dropdown menu button" @click="isShowDesign = !isShowDesign" class="w-11/12 flex flex-row items-center justify-between self-center shadow-md bg-white rounded-xl font-montserrat h-8 md:text-sm lg:text-base md:w-4/5  lg:mx-28 hover:bg-slate-50 active:bg-slate-200">
           {{design_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
@@ -51,7 +51,7 @@
       <section id="opinionMobile" v-if="opinionPage" class="sm:hidden row-start-2 row-end-2 flex flex-col sm:mt-0 sm:row-start-1">
         <p class="font-roboto text-xl text-center md:mx-2 md:pb-16 lg:pb-9 xl:pb-12">{{ $t('Feedback2') }}</p>
         <!--DropDown menu opinion-->
-        <button @click="isShowOpinion = !isShowOpinion" class=" text-sm lg:text-base flex flex-row items-center justify-between shadow-md bg-white rounded-xl font-montserrat h-8 lg:mx-24 mt-8 md:-mt-2 w-4/5 self-center hover:bg-slate-50 active:bg-slate-200">
+        <button aria-label="dropdown menu button" @click="isShowOpinion = !isShowOpinion" class=" text-sm lg:text-base flex flex-row items-center justify-between shadow-md bg-white rounded-xl font-montserrat h-8 lg:mx-24 mt-8 md:-mt-2 w-4/5 self-center hover:bg-slate-50 active:bg-slate-200">
           {{opinion_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
@@ -67,7 +67,7 @@
           <div class=" md:mx-10 lg:mx-2 xl:-mx-28 bg-white resize-none mt-3 h-32 rounded-3xl shadow-inner font-roboto flex flex-col items-center ">
             <textarea v-model="message" type="text" id="message" name="message" class="z-1 resize-none relative  h-full font-roboto w-10/12 xl:w-11/12 md:w-60 lg:w-80 focus:outline-0" ></textarea>
           </div>
-          <button v-show="message" @click="sendOpinion" class="self-center w-36 mt-12 md:w-36 md:mt-4 lg:w-2/3 lg:mt-16 xl:mx-28  shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
+          <button  aria-label="Send opinion button" v-show="message" @click="sendOpinion" class="self-center w-36 mt-12 md:w-36 md:mt-4 lg:w-2/3 lg:mt-16 xl:mx-28  shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('FeedbackButton1') }}</button>
         </div>
       </section>
       <!-- DESIGN SECTION-->
@@ -75,7 +75,7 @@
         <p class="font-roboto text-xl text-center pb-9 lg:pb-7 mx-5">{{ $t('Feedback3') }}</p>
 
         <!--DropDown menu design-->
-        <button @click="isShowDesign = !isShowDesign" class="w-11/12 flex flex-row items-center justify-between self-center shadow-md bg-white rounded-xl font-montserrat h-8 md:text-sm lg:text-base md:w-4/5  lg:mx-28 hover:bg-slate-50 active:bg-slate-200">
+        <button aria-label="dropdown menu button" @click="isShowDesign = !isShowDesign" class="w-11/12 flex flex-row items-center justify-between self-center shadow-md bg-white rounded-xl font-montserrat h-8 md:text-sm lg:text-base md:w-4/5  lg:mx-28 hover:bg-slate-50 active:bg-slate-200">
           {{design_icon}}
           <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center"></svg-icon>
         </button>
@@ -87,11 +87,11 @@
 
         <DragDropArea v-bind:design_icon="design_icon" @removeIcon="removeIcon" ></DragDropArea>
       </section>
-      <!-- Buttons to chenga between mobile sections-->
-      <button  @click="opinionPage = !opinionPage" v-show="opinionPage" class="sm:hidden absolute z-20 -rotate-90 items-center right-2 bottom-10 shadow-md rounded-xl font-montserrat ">
+      <!-- Buttons to change between mobile sections-->
+      <button   aria-label="change page button" @click="opinionPage = !opinionPage" v-show="opinionPage" class="sm:hidden absolute z-20 -rotate-90 items-center right-2 bottom-10 shadow-md rounded-xl font-montserrat ">
         <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center "></svg-icon>
       </button>
-      <button  @click="opinionPage = !opinionPage" v-show="!opinionPage" class="sm:hidden absolute z-20 rotate-90 items-center left-2 bottom-10 shadow-md rounded-xl font-montserrat ">
+      <button   aria-label="change page button" @click="opinionPage = !opinionPage" v-show="!opinionPage" class="sm:hidden absolute z-20 rotate-90 items-center left-2 bottom-10 shadow-md rounded-xl font-montserrat ">
         <svg-icon :path= "chevron" type="mdi" width=44 height=44 color="black" class="self-center "></svg-icon>
       </button>
     </div>
@@ -121,6 +121,7 @@ export default {
   data() {
     return {
       path :'',
+      alt :'',
       message: '',
       popUp:'',
       showPopUp:false,
@@ -137,56 +138,73 @@ export default {
       return [
         {
           name: this.$t('Descriptive'),
-          path:"descriptive_processing"
+          path:"descriptive_processing",
+          alt: this.$t('AltDescriptive')
         },
         {
           name: this.$t('Diagnostic'),
-          path:"diagnostic_processing"
+          path:"diagnostic_processing",
+          alt: this.$t('AltDiagnostic')
         },{
-      name: this.$t('Predictive'),
-          path:"predictive_processing"
+          name: this.$t('Predictive'),
+          path:"predictive_processing",
+          alt: this.$t('AltPredictive')
     },{
-      name: this.$t('Prescriptive'),
-          path:"prescriptive_processing"
+          name: this.$t('Prescriptive'),
+          path:"prescriptive_processing",
+          alt: this.$t('AltPrescriptive')
     },{
-      name: this.$t('Cookies'),
-          path:"cookies"
+          name: this.$t('Cookies'),
+          path:"cookies",
+          alt: this.$t('AltCookies')
     },{
-      name: this.$t('Cache') ,
-          path:"local_cache"
+          name: this.$t('Cache') ,
+          path:"local_cache",
+          alt: this.$t('AltCache')
     },{
-      name: this.$t('Personal'),
-          path:"personal_data"
+          name: this.$t('Personal'),
+          path:"personal_data",
+          alt: this.$t('AltPersonal')
     },{
-      name: this.$t('General'),
-          path:"general_data"
+          name: this.$t('General'),
+          path:"general_data",
+          alt: this.$t('AltGeneral')
     },{
-      name: this.$t('Metadata'),
-          path:"metadata"
+          name: this.$t('Metadata'),
+          path:"metadata",
+          alt: this.$t('AltMetadata')
     },{
-      name: this.$t('TransferExtern'),
-          path:"third_party"
+          name: this.$t('TransferExtern'),
+          path:"third_party",
+          alt: this.$t('AltTransferExtern')
     },{
-      name: this.$t('TransferIntern'),
-          path:"intern_transfer"
+          name: this.$t('TransferIntern'),
+          path:"intern_transfer",
+          alt: this.$t('AltTransferIntern')
     },{
-      name: this.$t('NotAnonymized'),
-          path:"no_anonymized"
+          name: this.$t('NotAnonymized'),
+          path:"no_anonymized",
+          alt: this.$t('AltNotAnonymized')
     },{
-      name: this.$t('Anonymized'),
-          path:"anonymized"
+          name: this.$t('Anonymized'),
+          path:"anonymized",
+          alt: this.$t('AltAnonymized')
     },{
-      name: this.$t('Stored'),
-          path:"stored_time"
+          name: this.$t('Stored'),
+          path:"stored_time",
+          alt: this.$t('AltStored')
     },{
-      name: this.$t('Pseudoanonymized'),
-          path:"pseudoanonymized"
+          name: this.$t('Pseudoanonymized'),
+          path:"pseudoanonymized",
+          alt: this.$t('AltPseudoanonymized')
     },{
-      name: this.$t('Encrypted'),
-          path:"encrypted"
+          name: this.$t('Encrypted'),
+          path:"encrypted",
+          alt: this.$t('AltEncrypted')
     },{
-      name: this.$t('Processed'),
-          path:"processed_time"
+          name: this.$t('Processed'),
+          path:"processed_time",
+          alt: this.$t('AltProcessed')
     },
 ]
     }

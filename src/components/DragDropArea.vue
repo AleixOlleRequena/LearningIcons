@@ -12,12 +12,12 @@
       <span class="font-bold text-center text-xl"> {{numberOfImages}} </span>
     </div>
 
-    <input type="file" ref="input" multiple @change="previewImage" accept="image/*" class="hidden" >
-    <button @click="this.$refs.input.click()" class="flex flex-row bg-blue-400 hover:bg-blue-500 rounded-lg px-6 py-3 mx-2 font-bold">{{ $t('DragDrop3') }}</button>
+    <input aria-label="Browse files" type="file" ref="input" multiple @change="previewImage" accept="image/*" class="hidden" >
+    <button  aria-label="Browse button" @click="this.$refs.input.click()" class="flex flex-row bg-blue-400 hover:bg-blue-500 rounded-lg px-6 py-3 mx-2 font-bold">{{ $t('DragDrop3') }}</button>
     <div class="hidden" @click="this.$parent.$refs.upload.click()"></div>
   </div>
   <div class="flex flex-col mt-3 ">
-    <button v-show="imageData" @click="onUpload" class="mx-28 mt-80 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('DragDropButton') }}</button>
+    <button  aria-label="Send design button" v-show="imageData" @click="onUpload" class="mx-28 mt-80 shadow-md bg-white rounded-3xl font-montserrat h-16 text-2xl hover:bg-slate-50 active:bg-slate-200">{{ $t('DragDropButton') }}</button>
   </div>
 </template>
 

@@ -15,7 +15,7 @@
 
     <div class="absolute left-1/2">
       <a download="icons.json" href="LearningIcons/assets/icons.json" >
-        <button id="download" class=" shadow-md bg-white rounded-xl font-montserrat w-48 h-10 text-xl hover:bg-slate-50 active:bg-slate-200">{{$t('JSON')}}</button>
+        <button aria-label="download JSON button" id="download" class="ml-12 shadow-md bg-white rounded-xl font-montserrat w-48 h-10 text-xl hover:bg-slate-50 active:bg-slate-200">{{$t('JSON')}}</button>
       </a>
     </div>
 
