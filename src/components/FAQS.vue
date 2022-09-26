@@ -5,7 +5,7 @@
       <span class="font-normal text-xl md:text-2xl text-center font-montserrat">{{faq.title}}</span>
     </template>
     <template v-slot:content>
-      <p class="pt-5 md:text-xl font-roboto">
+      <p class="pt-5 font-roboto">
         {{faq.value}}
       </p>
     </template>
