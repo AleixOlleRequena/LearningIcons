@@ -14,9 +14,9 @@
       </div>
     </div>
 
-    <div id="collaborators" class="relative w-screen justify-center mt-56 sm:mt-24 md:flex flex-col lg:-mt-4 lg:grid grid-rows-2">
+    <div id="collaborators" class="relative w-100 justify-center mt-56 sm:mt-24 md:flex flex-col lg:-mt-4 lg:grid grid-rows-2">
       <h2 class="font-montserrat text-center text-2xl md:self-center md:mt-10 md:text-4xl justify-self-center">{{ $t('Main3') }}</h2>
-      <div id="collaboratorsImages" class="flex flex-col justify-center  lg:grid grid-cols-3 lg:place-items-center  md:flex-col md:mt-20 lg:mt-10 ">
+      <div id="collaboratorsImages" class=" flex flex-col justify-center   lg:grid grid-cols-3 lg:place-items-center  md:flex-col md:mt-20 lg:mt-10 ">
         <img alt= "LaSalle logo" src="assets/lasalle.png" @click="openInNewTab('https://www.salleurl.edu')" class="scale-50 lg:scale-100 lg:place-self-center cursor-pointer">
         <img alt= "Universitat Politecnica de Catalunya logo" src="assets/upc.png" @click="openInNewTab('https://www.upc.edu/')" class="scale-50 cursor-pointer">
         <img alt= "Universidad de Salamanca logo" src="assets/usal.png" @click="openInNewTab('https://www.usal.es/')" class="scale-50 cursor-pointer">
